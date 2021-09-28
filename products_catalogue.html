@@ -26,7 +26,7 @@
             margin: auto;
         }
 
-        #productsDisplay > div {
+        #productsDisplay>div {
             min-width: 205px;
             max-width: 232px;
             box-sizing: border-box;
@@ -35,10 +35,13 @@
             font-size: 13px;
             color: #999;
             background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
         }
 
         #productsDisplay>div:hover {
-            box-shadow: 0 0 20px rgba(128, 128, 128, 0.397);
+            box-shadow: 0 10px 20px 5px rgba(167, 165, 165, 0.253);
             cursor: pointer;
             border-radius: 5px;
         }
@@ -60,6 +63,32 @@
             letter-spacing: 1px;
         }
 
+        #loadMore {
+            max-width: 1600px;
+            margin: auto;
+            display: flex;
+            justify-content: center
+        }
+
+        #loadMore > button{
+            padding: 0 10px;
+            border: 0;
+            background-color: #333;
+            color: white;
+            font-size: 14px;
+            padding: 0 10px;
+            margin: 0 auto;
+            width: 340px;
+            height: 40px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(128, 128, 128, 0.397);
+            margin-top: 10px;
+        }
+
+        #loadMore > button:hover{
+            cursor: pointer;
+        }
+
         @media (min-width: 1582px) {
             #productsDisplay {
                 max-width: 1600px;
@@ -74,6 +103,10 @@
 
     <div id="productsDisplay">
 
+    </div>
+
+    <div id="loadMore">
+        <button>Load More</button>
     </div>
 
 </body>
@@ -353,21 +386,33 @@
         }
     ];
 
+    let load_btn = document.getElementById("loadMore");
+    load_btn.onclick = function(){
+        showProducts(products);
+    }
+
     let productsDisplay = document.getElementById("productsDisplay");
 
-    function showProducts(prod) {
-        
-        products.forEach(p => {
+    let counter = 0;
+
+
+    //This is only for home page.
+    function showProducts(p) {
+        let temp = 15;
+        while (temp > 0) {
+            if (counter >= products.length) {
+                counter = 0;
+            }
             let div = document.createElement("div");
             let img = document.createElement("img");
-            img.src = p.image1;
+            img.src = p[counter].image1;
             let name = document.createElement("div");//
-            name.innerText = p.name;
+            name.innerText = p[counter].name;
             // name.style.textOverflow = "ellipsis";
             // name.style.height = "36px";
 
             let star = document.createElement("div");
-            star.innerText = getStar(p.rating);
+            star.innerText = getStar(p[counter].rating);
             star.style.color = "#ffc544";
             star.className = "star-rating";
             //Temporary Code
@@ -380,18 +425,18 @@
             let pricing = document.createElement("div");
 
             let mrp = document.createElement("span");
-            mrp.innerText = "Rs " + p.price + " ";
+            mrp.innerText = "Rs " + p[counter].price + " ";
             mrp.style.textDecoration = "line-through";
             mrp.style.marginRight = "2px";
 
             let discountPrice = document.createElement("span");
-            discountPrice.innerText = "Rs " + Math.floor(p.price * (1 - (p.discount * 0.01)));
+            discountPrice.innerText = "Rs " + Math.floor(p[counter].price * (1 - (p[counter].discount * 0.01)));
             discountPrice.style.marginRight = "5px";
             discountPrice.style.color = "black";
 
             let discount = document.createElement("div");
             discount.style.display = "inline-block";
-            discount.innerText = p.discount + "% OFF";
+            discount.innerText = p[counter].discount + "% OFF";
             discount.style.border = "1px solid #999";
             discount.style.boxSizing = "border-box";
             discount.style.padding = "4px";
@@ -401,8 +446,61 @@
             pricing.append(mrp, discountPrice, discount);
             div.append(img, name, star, pricing);
             productsDisplay.append(div);
-        })
+
+            temp--;
+            counter++;
+        }
     }
+
+
+    // // *********FOR OTHER PAGES LIKE SEARCH USE THIS*************
+    // function showProducts(p) {
+    //     products.forEach(p => {
+    //         let div = document.createElement("div");
+    //         let img = document.createElement("img");
+    //         img.src = p.image1;
+    //         let name = document.createElement("div");//
+    //         name.innerText = p.name;
+    //         // name.style.textOverflow = "ellipsis";
+    //         // name.style.height = "36px";
+
+    //         let star = document.createElement("div");
+    //         star.innerText = getStar(p.rating);
+    //         star.style.color = "#ffc544";
+    //         star.className = "star-rating";
+    //         //Temporary Code
+    //         // let star_img = document.createElement("img");
+    //         // star_img.src = "https://www.pngfind.com/pngs/m/668-6687141_star-rating-png-487848-5-stars-transparent-background.png";
+    //         // star_img.style.height = "17px";
+    //         // star.append(star_img);
+    //         //Temporary Code
+
+    //         let pricing = document.createElement("div");
+
+    //         let mrp = document.createElement("span");
+    //         mrp.innerText = "Rs " + p.price + " ";
+    //         mrp.style.textDecoration = "line-through";
+    //         mrp.style.marginRight = "2px";
+
+    //         let discountPrice = document.createElement("span");
+    //         discountPrice.innerText = "Rs " + Math.floor(p.price * (1 - (p.discount * 0.01)));
+    //         discountPrice.style.marginRight = "5px";
+    //         discountPrice.style.color = "black";
+
+    //         let discount = document.createElement("div");
+    //         discount.style.display = "inline-block";
+    //         discount.innerText = p.discount + "% OFF";
+    //         discount.style.border = "1px solid #999";
+    //         discount.style.boxSizing = "border-box";
+    //         discount.style.padding = "4px";
+    //         discount.style.fontSize = "10px";
+    //         discount.style.marginLeft = "4px";
+
+    //         pricing.append(mrp, discountPrice, discount);
+    //         div.append(img, name, star, pricing);
+    //         productsDisplay.append(div);
+    //     })
+    // }
 
     showProducts(products);
 

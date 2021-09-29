@@ -231,10 +231,17 @@
         buyNow(product)
     }
 
+    if(localStorage.getItem("mycart")==null){
+        localStorage.setItem("mycart",JSON.stringify([]))
+    }
 
 function addtoCart(product){
 
 window.location.href="myCart.html"
+
+let mycart=JSON.parse(localStorage.getItem("mycart"))
+mycart.push(product)
+localStorage.setItem("mycart",JSON.stringify(mycart))
 
 }
 

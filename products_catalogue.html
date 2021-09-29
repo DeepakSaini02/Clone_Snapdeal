@@ -447,8 +447,9 @@
             div.append(img, name, star, pricing);
             productsDisplay.append(div);
 
+            let n = counter;
             div.onclick = function () {
-                details(p[counter])
+                details(p[n]);
             }
 
             temp--;

@@ -1,12 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart</title>
+    <style>
+        body{
+            background-color: #F5F5F5;
+        }
+        /* #container {
+            border: 3px solid rebeccapurple;
+            display: inline-block;
+           
+        } */
+
+        #container>div {
+            
+            display: flex;
+            justify-content: center;
+            margin: 8% auto;
+            width: 90%;
+            background-color: white;
+          padding: 10px;
+            
+
+        }
+
+        #firstDiv {
+            /* border: 2px solid red; */
+            width: 40%;
+            display: flex;
+            margin: 26px;
+            color: #999;
+        }
+
+        #firstDiv>div {
+            /* border: 2px solid black; */
+            margin: 0 5%;
+            color: #999;
+        }
+
+        #container>div>div {
+            /* border: 2px solid green; */
+            margin: 10px;
+            color: #999;
+
+        }
+
+        img {
+            vertical-align: baseline;
+            width: 90px;
+            height: 90px;
+        }
+
+        #ThirdDiv>button:nth-child(1) {
+
+            padding: 16px 43px;
+            margin: 3px;
+            background-color: #E91E63;
+            color: white;
+            border-radius: 2px;
+            border: 2px solid #E91E63;
+        }
+
+        #ThirdDiv>button:nth-child(2) {
+
+            padding: 16px 32px;
+            margin: 3px;
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            border: 2px solid black;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome </h1>
+    <div id="container">
+
+    </div>
+
 </body>
+
 </html>
+
+<script>
+    let container = document.getElementById("container");
+
+    let arrofCart = JSON.parse(localStorage.getItem('mycart'));
+    // console.log(arrofCart)
+
+    let product = JSON.parse(localStorage.getItem('productdetails'));
+
+    let div = document.createElement("div");
+
+
+    let div1 = document.createElement("div");
+    div1.id = "firstDiv";
+
+    let img = document.createElement("img");
+    img.src = product.image1;
+    let div11 = document.createElement("div");
+
+    let name = document.createElement("p");
+    name.textContent = product.name;
+    let price = document.createElement("p");
+    price.textContent = "Rs." + Math.floor(product.price * (1 - (product.discount * 0.01)));
+    div11.append(name, price);
+    div1.append(img, div11);
+
+    sum = 0;
+    // aa=0
+    for (let i = 0; i < arrofCart.length; i++) {
+        // aa=aa+arrofCart[i].price;
+        sum = sum + Math.floor(arrofCart[i].price * (1 - (arrofCart[i].discount * 0.01)));
+    }
+    console.log(sum);
+    let div2 = document.createElement("div");
+    let totalItem = document.createElement('p');
+    totalItem.textContent = "Your Order: " + arrofCart.length + "Item";
+
+    let totalPrice = document.createElement('p');
+    totalPrice.textContent = "You Pay: Rs. " + sum;
+
+    div2.append(totalItem, totalPrice);
+
+
+    let div3 = document.createElement("div");
+    div3.id = "ThirdDiv"
+    let proceed = document.createElement("button");
+    proceed.textContent = "PROCEED TO CHECKOUT";
+    let cart = document.createElement("button");
+    cart.textContent = "VIEW CART";
+    div3.append(proceed, cart);
+
+
+    div.append(div1, div2, div3);
+    container.append(div);
+
+
+
+</script>

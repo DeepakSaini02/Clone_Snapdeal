@@ -447,9 +447,15 @@
             div.append(img, name, star, pricing);
             productsDisplay.append(div);
 
+            div.onclick = function () {
+                details(p[counter])
+            }
+
             temp--;
             counter++;
         }
+
+       
     }
 
 
@@ -521,7 +527,15 @@
         }
     }
 
+function details(p){
+    console.log(p)
 
+
+        localStorage.setItem("productdetails", JSON.stringify(p))
+  
+    window.location.href="product_details.html"
+
+}
 
 
 </script>

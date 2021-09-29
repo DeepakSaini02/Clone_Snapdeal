@@ -94,11 +94,12 @@
 
         #addAndBuy>button:nth-child(2) {
             background-color: #e40046;
+        
         }
 
         #returnDiv>h5,h6{
             margin: 2px;
-            font-size: 13px;
+            font-size: 12px;
     color: #666666;
 
         }
@@ -114,8 +115,8 @@
 </html>
 
 <script>
-    let product = JSON.parse(localStorage.getItem("productdetails"))
-
+    let product = JSON.parse(localStorage.getItem("productdetails"));
+    
 
     let parent = document.createElement("div");
     parent.id = "parent";
@@ -149,48 +150,57 @@
     starinner.append(iconstar)
     starouter.append(starinner)
 
-    let hr = document.createElement("hr")
+    let hr = document.createElement("hr");
 
     let pricing = document.createElement("div");
 
     let mrp = document.createElement("span");
-    mrp.innerText = "Rs " + product.price + " ";
+    mrp.innerText = "Rs. " + product.price + " "+"\n";
     mrp.style.textDecoration = "line-through";
     mrp.style.marginRight = "2px";
+    mrp.style.color = "#bbbbbb"
     // mrp.style.display = "inline-Block";
+  
+   
 
     let discountPrice = document.createElement("span");
-    discountPrice.innerText = "Rs " + Math.floor(product.price * (1 - (product.discount * 0.01)));
+    discountPrice.innerText = "Rs. " + Math.floor(product.price * (1 - (product.discount * 0.01)));
     discountPrice.style.marginRight = "5px";
-    discountPrice.style.color = "black";
+    discountPrice.style.color = "red";
+    discountPrice.style.fontSize = "24px";
 
     let discount = document.createElement("div");
     discount.style.display = "inline-block";
-    discount.innerText = product.discount + "% OFF";
+    discount.innerText = product.discount + "% OFF"+"\n";
     discount.style.border = "1px solid #999";
     discount.style.boxSizing = "border-box";
     discount.style.padding = "4px";
     discount.style.fontSize = "10px";
 
+
     pricing.style.display = "inline"
     pricing.style.width = "10%"
     pricing.append(mrp, discountPrice, discount);
 
+    
 
     let offer = document.createElement("div")
     let headpara = document.createElement("p")
     offer.id = "offer";
-    headpara.textContent = "(3) Offers | Applicable on cart"
+    headpara.textContent = "(3) Offers | Applicable on cart";
+    headpara.style.fontSize = "14px";
 
 
     let offer1 = document.createElement("div")
     let para1 = document.createElement("p")
+
     para1.textContent = "15% Instant Discount Using Rupay Debit & Credit Cards T&C"
 
     offer1.append(para1)
 
     let offer2 = document.createElement("div")
     let para2 = document.createElement("p")
+
     para2.textContent = "25% Instant Discount Using IDBI Bank Credit Cards T&C"
     offer2.append(para2)
 
@@ -200,6 +210,8 @@
     offer3.append(para3)
 
     offer.append(headpara, offer1, offer2, offer3)
+    offer.style.margin = "0 400px"
+    offer.style.border = "1px solid black"
 
     let addAndBuy = document.createElement('div')
     addAndBuy.id = "addAndBuy";

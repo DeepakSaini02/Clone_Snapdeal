@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .topThinBar {
+            background-color: #c7363d;
+            color: white;
+            font-size: 12px;
+        }
+
+        .topThinBar>div {
+            display: flex;
+            justify-content: space-between;
+            line-height: 5px;
+            max-width: 1600px;
+            margin: auto;
+        }
+
+        .topThinBar>div>div:nth-of-type(2) {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav {
+            background-color: #e53f46;
+            height: 65px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav>div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #fff;
+            max-width: 1600px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .sd-logo {
+            width: 142px;
+            height: 30px;
+            margin-right: 58px;
+        }
+
+        nav>div>div>p {
+            font-size: 13px;
+        }
+
+        .searchBar {
+            min-width: 400px;
+            width: 58.33%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .searchBar>input {
+            width: 78%;
+            padding: 0 10px 0 32px;
+            height: 37px;
+            border: 0;
+            border-radius: 2px;
+            background-color: rgb(244, 244, 244);
+        }
+
+        .searchBar>button {
+            /* padding: 10px 5%; */
+            width: 16.67%;
+            border: 0;
+            border-radius: 2px;
+            background-color: #333;
+            color: white;
+            font-size: 14px;
+            padding: 0 8px;
+
+        }
+
+        .cartButton {
+            border-left: 1px solid #ce3840;
+            border-right: 1px solid #ce3840;
+            min-width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10%;
+            max-width: 100px;
+            margin-left: 9%;
+            height: 100%;
+            justify-self: flex-end;
+        }
+
+
+        @media (min-width: 1582px) {
+            nav>div {
+                max-width: 1402px;
+            }
+
+            .topThinBar>div {
+                max-width: 1402px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topThinBar">
+        <div>
+            <div>
+                <p>Brand Waali Quality, Bazaar Waali Deal!</p>
+            </div>
+            <div>
+                <p>Gift Cards</p>
+                <p>Help Center</p>
+                <p>Sell On Snapdeal</p>
+                <p>Download App</p>
+            </div>
+        </div>
+
+    </div>
+    <nav>
+        <div>
+            <a href="home.html">
+                <img class="sd-logo" src="https://i3.sdlcdn.com/img/snapdeal/darwin/logo/sdLatestLogo.svg">
+            </a>
+
+            <div class="searchBar">
+                <input type="text/" placeholder="Search products & brands">
+                <button class="black-btn">Search</button>
+            </div>
+            <div class="cartButton">
+                <p>Cart</p>
+            </div>
+            <div>
+                <p>Sign In</p>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>

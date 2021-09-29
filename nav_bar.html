@@ -105,6 +105,304 @@
         }
 
 
+        /* CSS for login starts */
+        #overlay {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+        }
+
+        #overlay>div:nth-child(1) {
+            background-color: #000000;
+            opacity: 0.7;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #login-area {
+            width: 726px;
+            height: 360px;
+            border-radius: 5px;
+            margin: 15% 30%;
+            background-color: #edf1f4;
+            ;
+            position: absolute;
+            z-index: 10;
+            background-image: url("https://i2.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png");
+            display: flex;
+            align-items: center;
+            box-shadow: 0 10px 10px rgba(59, 57, 57, 0.472);
+        }
+
+        #login-area>div:nth-of-type(1) {
+            padding: 27px 34px 27px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 360px;
+            box-sizing: border-box;
+        }
+
+        #login-area>div>div {
+            display: flex;
+            align-items: center;
+        }
+
+        #login-area>div>div>div {
+            width: 200px;
+        }
+
+        #login-area>div>div>div:nth-of-type(1) {
+            width: 65px;
+            height: 63px;
+            overflow: hidden;
+        }
+
+        #login-area>div>div>div>h4 {
+            font-weight: 100;
+            margin: 2px;
+            font-size: 11px;
+        }
+
+        #login-area>div>div>div>p {
+            color: #666;
+            font-size: 11px;
+            margin: 0
+        }
+
+        #login-area>div:nth-of-type(2) {
+            padding: 25px 29px 29px 29px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 340px;
+            height: 405px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(59, 57, 57, 0.472);
+        }
+
+        #login-area>div:nth-of-type(2)>p:nth-of-type(1) {
+            color: #333;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        #login-area>div:nth-of-type(2)>p:nth-of-type(2) {
+            color: #333;
+            font-size: 11px;
+            margin: 0 0 20px;
+        }
+
+        #login-area>div:nth-of-type(2)>input {
+            color: #333;
+            font-size: 12px;
+            padding: 9px 10px;
+            border: 1px solid #d2d2d2;
+            height: 20px;
+        }
+
+        #login-area>div:nth-of-type(2)>button:nth-of-type(1) {
+            border: 0;
+            background: transparent;
+            color: #d2d2d2;
+            font-size: 20px;
+            position: absolute;
+            top: 5px;
+            left: 630px;
+            cursor: pointer;
+        }
+
+        #login-area>div:nth-of-type(2)>button:nth-of-type(2) {
+            color: #ffffff;
+            background-color: #e40046;
+            font-size: 13px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            height: 40px;
+            border-radius: 3px;
+            border: 0;
+            font-weight: 400;
+        }
+
+        #login-area>div:nth-of-type(2)>p:nth-of-type(3) {
+            margin-top: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #bbbbbb;
+            text-align: center;
+        }
+
+        #login-area>div:nth-of-type(2)>div {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        #login-area>div:nth-of-type(2)>div>button {
+            width: 141px;
+            height: 40px;
+            box-sizing: border-box;
+            border: 0;
+            font-size: 10px;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(59, 57, 57, 0.239);
+        }
+
+        #login-area>div:nth-of-type(2)>div>button:nth-of-type(1) {
+            background-color: #4267B2;
+            color: #fff;
+        }
+
+        #login-area>div:nth-of-type(2)>div>button:nth-of-type(2) {
+            margin-left: 15px;
+            background-color: #fff;
+
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-btn>div {
+            width: 16.69px;
+            height: 16.69px;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        #login-area>div:nth-of-type(3) {
+            padding: 25px 29px 29px 29px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-evenly; */
+            width: 340px;
+            height: 653px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(59, 57, 57, 0.472);
+            display: none;
+        }
+
+        #login-area>div:nth-of-type(3)>button:nth-of-type(1) {
+            border: 0;
+            background: transparent;
+            color: #d2d2d2;
+            font-size: 20px;
+            position: absolute;
+            top: -125px;
+            left: 640px;
+            cursor: pointer;
+        }
+
+        #login-area>div:nth-of-type(3)>p:nth-of-type(1) {
+            color: #333;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        #login-area>div:nth-of-type(3)>p:nth-of-type(2) {
+            color: #333;
+            font-size: 11px;
+            margin: 0 0 20px;
+        }
+
+        #login-area>div:nth-of-type(3)>form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        #login-area>div:nth-of-type(3)>form>input {
+            color: #333;
+            font-size: 12px;
+            padding: 9px 10px;
+            border: 1px solid #d2d2d2;
+            height: 20px;
+        }
+
+        #login-area>div:nth-of-type(3)>form>p:nth-of-type(1) {
+            color: #999;
+            font-size: 10px;
+        }
+
+        #login-area>div:nth-of-type(3)>form>div {
+            display: flex;
+            align-content: center;
+            font-size: 11px;
+            margin-bottom: 0;
+        }
+
+        #login-area>div:nth-of-type(3)>form>div>input {
+            transform: scale(1.5);
+            margin-right: 15px;
+        }
+
+        #login-area>div:nth-of-type(3)>form>button {
+            color: #ffffff;
+            background-color: #e40046;
+            font-size: 13px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            cursor: pointer;
+            height: 40px;
+            border-radius: 3px;
+            border: 0;
+            font-weight: 400;
+        }
+
+        #login-area>div:nth-of-type(3)>form>p:nth-of-type(2) {
+            color: #999;
+            font-size: 10px;
+            text-align: center;
+            margin: 0;
+        }
+
+        #login-area>div:nth-of-type(3)>p:nth-of-type(3) {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #bbbbbb;
+            text-align: center;
+        }
+
+        #login-area>div:nth-of-type(3)>div>button {
+            width: 141px;
+            height: 40px;
+            box-sizing: border-box;
+            border: 0;
+            font-size: 10px;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(59, 57, 57, 0.239);
+        }
+
+        #login-area>div:nth-of-type(3)>div>button:nth-of-type(1) {
+            background-color: #4267B2;
+            color: #fff;
+        }
+
+        #login-area>div:nth-of-type(3)>div>button:nth-of-type(2) {
+            margin-left: 15px;
+            background-color: #fff;
+
+        }
+
+        /* CSS for login ends */
+
+
         @media (min-width: 1582px) {
             nav>div {
                 max-width: 1402px;
@@ -118,6 +416,116 @@
 </head>
 
 <body>
+
+    <!-- Login Signup Overlay starts -->
+    <div id="overlay">
+        <div onclick="removeOverlay()">
+
+        </div>
+        <div id="login-area">
+            <div>
+                <div>
+                    <div>
+                        <img src="https://i2.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png"
+                            style=" object-fit: cover; object-position: 0px -378px;">
+                    </div>
+                    <div>
+                        <h4>MANAGE YOUR ORDERS</h4>
+                        <p>Track orders, manage cancellation & returns.</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://i2.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png"
+                            style=" object-fit: cover; object-position: -60px -378px;">
+                    </div>
+                    <div>
+                        <h4>SHORTLIST ITEMS YOU LOVE</h4>
+                        <p>Keep items you love on a watchlist.</p>
+                    </div>
+
+                </div>
+                <div>
+                    <div>
+                        <img src="https://i2.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png"
+                            style=" object-fit: cover; object-position: -128px -378px;">
+                    </div>
+                    <div>
+                        <h4>
+                            AWESOME OFFERS UPDATES FOR YOU
+                        </h4>
+                        <p>Be firs to know about great offers and save</p>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <p>Login/Sign Up On Snapdeal</p>
+                <button onclick="removeOverlay()">X</button>
+                <p>Please provide your Mobile Number or Email to Login/Sign Up on Snapdeal</p>
+                <input type="text" id="login_number_email" placeholder="Mobile Number / Email">
+                <button onclick="validateUser()">CONTINUE</button>
+                <p>or Login using</p>
+                <div>
+                    <button class="social-btn">
+                        <div>
+                            <div style="background-color: white;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111393.png"
+                                    style="width: 16px; object-position: 0px 2px;">
+                            </div>
+                        </div>
+                        Facebook
+                    </button>
+                    <button class="social-btn">
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+                                style="width: 16px;">
+                        </div>
+                        Google
+                    </button>
+                </div>
+            </div>
+            <div>
+                <p>Sign Up</p>
+                <button onclick="removeOverlay()">X</button>
+                <p>Create an account on Snapdeal</p>
+                <form onsubmit="addUser(event)">
+                    <input type="email" id="signup_email" required>
+                    <input type="tel" size="10" placeholder="Mobile Number" id="signup_mobile" required>
+                    <input type="text" id="signup_name" placeholder="Name" required>
+                    <input type="date" id="signup_dob" placeholder="DOB" required>
+                    <input type="password" placeholder="Passwords" id="signup_password"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required>
+                    <p>Password should have a minimum of 6 character, atleast 1 numeric and 1 alphabet</p>
+                    <div>
+                        <input type="checkbox" checked>
+                        <label>Keep me logged in</label>
+                    </div>
+                    <button>CONTINUE</button>
+                    <p>By registering, I agree to <span style="color: #25a8ed;">Terms & Conditions</span> </p>
+                </form>
+
+                <p>or Login using</p>
+                <div>
+                    <button class="social-btn">
+                        <div style="background-color: white;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111393.png"
+                                style="width: 16px; object-position: 0px 2px;">
+                        </div>
+                        Facebook
+                    </button>
+                    <button class="social-btn">
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+                                style="width: 16px;">
+                        </div>
+                        Google
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Signup Overlay Ends -->
 
     <div class="topThinBar">
         <div>
@@ -147,7 +555,7 @@
                 <p>Cart</p>
             </div>
             <div>
-                <p>Sign In</p>
+                <p onclick="showLogin()">Sign In</p>
             </div>
         </div>
     </nav>
@@ -155,3 +563,109 @@
 </body>
 
 </html>
+
+
+<script>
+
+    //*****code for login and signup starts*****
+
+    function showLogin() {
+        let overlay = document.getElementById("overlay");
+        overlay.style.display = "block";
+        displayLoginAttribute(true);
+    }
+
+    function removeOverlay() {
+        let overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+        // window.onscroll = function(){};
+    }
+
+    function validateUser() {
+        if (localStorage.getItem("users") === null) {
+            localStorage.setItem("users", JSON.stringify([]));
+        };
+        let users = JSON.parse(localStorage.getItem("users"));
+        let entry = document.getElementById("login_number_email");
+
+        if (entry.value === "") {
+            alert("Please enter a valid mobile number or email");
+            return;
+        }
+
+        let user_found = false;
+        users.forEach(e => {
+            if (e.number == entry.value || e.email == entry.value) {
+                alert("logged in");
+                user_found = true;
+            }
+        })
+
+        //if user not found then showing signup area instead of login.
+        if (!user_found) {
+            displayLoginAttribute(false);
+        }
+        entry.value = "";
+
+    }
+
+    //This function will take boolean and change display attribute of login and signup.
+    function displayLoginAttribute(b) {
+        let login = document.querySelector("#login-area>div:nth-of-type(2)");
+        let signup = document.querySelector("#login-area>div:nth-of-type(3)");
+
+        if (b) {
+            login.style.display = "";
+            signup.style.display = "none";
+        } else {
+            login.style.display = "none";
+            signup.style.display = "block";
+        }
+
+    }
+
+    function addUser(e) {
+        e.preventDefault();
+
+        let email = document.getElementById("signup_email");
+        let number = document.getElementById("signup_mobile");
+        let name = document.getElementById("signup_name");
+        let dob = document.getElementById("signup_dob");
+        let password = document.getElementById("signup_password");
+
+        if (localStorage.getItem("users") === null) {
+            localStorage.setItem("users", JSON.stringify([]));
+        };
+
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        let obj = {
+            email: email.value,
+            number: number.value,
+            name: name.value,
+            dob: dob.value,
+            password: password.value
+        }
+
+        console.log(users);
+
+        let user_exists = false;
+
+        users.forEach(e => {
+            if (e.email == email.value || e.number == number.value) {
+                alert("User already exists");
+                user_exists = true;
+            };
+        });
+
+        if (!user_exists) {
+            users.push(obj);
+            localStorage.setItem("users", JSON.stringify(users));
+            removeOverlay();
+        }
+
+    }
+    //*****code for login and signup stops*****
+
+
+</script>

@@ -1,12 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
+    <style>
+        #myform {
+            display: grid;
+            margin-left: 50px;
+            grid-template-columns: 17% 35%;
+            gap: 7%;
+            font-size: 17px;
+
+        }
+
+        input[type=text]{
+            height: 32px;
+
+        }
+        input[type=number]{
+            height: 32px;
+
+        }
+        input[type=tel] {
+            height: 32px;
+
+        }
+
+        input[type=address]  {
+            height: 55px;
+        }
+
+        h1 {
+            background-color: black;
+            color: white;
+            padding: 10px 33px;
+        }
+
+        #finalAdd {
+            display: grid;
+    border: 2px solid #ECEFF1;
+    width: 20%;
+    margin-left: 20px;
+    padding: 6px;
+    gap: 6px;
+
+        }
+   
+        #myform>button{
+           grid-area: 9/2/10/3;
+           width: 50%;
+           background-color: #E91E63;
+            color: white;
+            padding: 10px 10px;
+            border: 2px solid #E91E63;
+        }
+        #boxbtn{
+            background-color: #E91E63;
+    color: white;
+    padding: 7px 10px;
+    border: 2px solid #E91E63;
+    width: 50%;
+
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome </h1>
+    <h1>Delivery Address</h1>
+
+    <form action="" onsubmit="daddress(event)" id="myform">
+        <label for="">Pincode</label>
+        <input type="number" name="" id="pincode" placeholder="6 digit pincode" required>
+
+        <label for="">Name</label>
+        <input type="text" id="name" placeholder="Full Name" required>
+
+        <label for="">Address</label>
+        <input type="address" id="address" placeholder="Flat/House No. Colony/Street No." required>
+
+        <label for="">Locality/Landmark</label>
+        <input type="text" id="landmark" placeholder="Eg. Near Apollo Hospital">
+
+        <label for="">City</label>
+        <input type="text" name="" id="city" placeholder="City">
+
+        <label for="">State</label>
+        <input type="text" id="state" placeholder="State" required>
+
+        <label for="">Mobile Number</label>
+        <input type="tel" name="" id="mobile" placeholder="10 digit mobile number" required>
+
+        <label for="">Address Type</label>
+        <div id="address">
+            <label for="">Home/Personal</label>
+            <input type="radio" value="Home/Personal" id="r1" name="1" required>
+            <label for="">Office/Commercial</label>
+            <input type="radio" value="Office/Com" id="r2" name="1" required>
+        </div>
+
+        <button>Save and Continue</button>
+    </form>
+
 </body>
+
 </html>
+
+<script>
+    let myform = document.getElementById('myform');
+    function daddress(e) {
+        e.preventDefault();
+        let pincode = document.getElementById('pincode').value;
+        let name = document.getElementById('name').value;
+
+        let address = document.getElementById('address').value;
+        let landmark = document.getElementById('landmark').value;
+        let city = document.getElementById('city').value;
+        let state = document.getElementById('state').value;
+        let mobile = document.getElementById('mobile').value;
+        let addressTy = document.getElementById('address').value;
+
+        if (addressTy == 'Home/Personal') {
+            add_value = document.getElementById('r1').value;
+
+        } else {
+            add_value = document.getElementById('r2').value;
+        }
+        console.log(pincode, name, address, landmark, city, state, mobile, add_value);
+
+        myform.style.display = "none";
+
+        let div = document.createElement('div')
+        div.id = "finalAdd";
+        let nameDiv = document.createElement('div');
+        nameDiv.append(name);
+
+        let addressDiv = document.createElement('div');
+        addressDiv.append(address);
+
+
+        let cityDiv = document.createElement('div');
+        cityDiv.append(city + " - " + pincode);
+
+        let stateDiv = document.createElement('div');
+        stateDiv.append(state);
+
+        let mobileDiv = document.createElement('div');
+        mobileDiv.append("Phone: " + mobile);
+
+
+        let boxBotton=document.createElement('button');
+        boxBotton.id='boxbtn';
+        boxBotton.textContent="DELIVERY HERE";
+        div.append(nameDiv, addressDiv, cityDiv, stateDiv, mobileDiv,boxBotton);
+        document.querySelector('body').append(div);
+
+
+
+    }
+</script>

@@ -16,6 +16,8 @@
             font-family: 'Open Sans', sans-serif;
         }
 
+        /* CSS for nav top bar starts */
+
         .topThinBar {
             background-color: #c7363d;
             color: white;
@@ -26,7 +28,7 @@
             display: flex;
             justify-content: space-between;
             line-height: 5px;
-            max-width: 1600px;
+            max-width: 1402px;
             margin: auto;
         }
 
@@ -47,12 +49,39 @@
 
         nav>div {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            max-width: 1402px;
+            margin: auto;
+            width: 100%;
+            height: 65px;
+        }
+
+        nav>div>div:nth-of-type(1) {
+            display: flex;
             justify-content: flex-start;
             align-items: center;
             color: #fff;
-            max-width: 1600px;
-            margin: auto;
-            width: 100%;
+            /* max-width: 1600px; */
+            /* margin: auto; */
+            width: 70%;
+        }
+
+        nav>div>div:nth-of-type(1)>a {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        nav>div>div:nth-of-type(2) {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: #fff;
+            /* max-width: 1600px; */
+            /* margin: auto; */
+            width: 25%;
         }
 
         .sd-logo {
@@ -61,14 +90,14 @@
             margin-right: 58px;
         }
 
-        nav>div>div>p {
+        nav>div>div:nth-of-type(2)>p {
             font-size: 13px;
         }
 
         .searchBar {
             min-width: 400px;
-            width: 58.33%;
-            max-width: 800px;
+            width: 100%;
+            max-width: 880px;
             display: flex;
             justify-content: center;
         }
@@ -101,13 +130,42 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 10%;
-            max-width: 100px;
-            margin-left: 9%;
+            width: 40%;
+            max-width: 150px;
+            /* margin-left: 9%; */
             height: 100%;
-            justify-self: flex-end;
+            font-size: 13px;
+            /* justify-self: flex-end; */
         }
 
+        .cartButton>img {
+            margin-left: 5px;
+        }
+
+        .signinButton {
+            min-width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            max-width: 180px;
+            font-size: 13px;
+            /* margin-left: 9%; */
+            /* height: 100%; */
+        }
+
+        .signinButton > div{
+           width: 37px;
+           height: 37px;
+           background-color: rgba(0,0,0,0.1);
+           border-radius: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin-left: 25px;
+        }
+
+        /* CSS for top nav bar ends */
 
         /* CSS for login starts */
         #overlay {
@@ -485,12 +543,8 @@
 
 
         @media (min-width: 1582px) {
-            nav>div {
-                max-width: 1402px;
-            }
-
-            .topThinBar>div {
-                max-width: 1402px;
+            nav>div, .topThinBar>div {
+                max-width: 1600px;
             }
         }
     </style>
@@ -646,19 +700,27 @@
     </div>
     <nav>
         <div>
-            <a href="home.html">
-                <img class="sd-logo" src="https://i3.sdlcdn.com/img/snapdeal/darwin/logo/sdLatestLogo.svg">
-            </a>
+            <div>
+                <a href="home.html">
+                    <img class="sd-logo" src="https://i3.sdlcdn.com/img/snapdeal/darwin/logo/sdLatestLogo.svg">
+                </a>
 
-            <div class="searchBar">
-                <input type="text/" placeholder="Search products & brands">
-                <button class="black-btn">Search</button>
-            </div>
-            <div class="cartButton">
-                <p>Cart</p>
+                <div class="searchBar">
+                    <input type="text/" placeholder="Search products & brands">
+                    <button class="black-btn">Search</button>
+                </div>
             </div>
             <div>
-                <p id="nav_signin" onclick="showLogin()">Sign In</p>
+                <div class="cartButton">
+                    <p>Cart</p>
+                    <img src="https://img.icons8.com/windows/32/ffffff/shopping-cart.png">
+                </div>
+                <div class="signinButton">
+                    <p id="nav_signin" onclick="showLogin()">Sign In</p>
+                    <div>
+                        <img src="https://img.icons8.com/material-rounded/24/ffffff/user.png" style="width: 24px;"/>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

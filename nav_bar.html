@@ -32,9 +32,14 @@
             margin: auto;
         }
 
+
         .topThinBar>div>div:nth-of-type(2) {
             display: flex;
             gap: 10px;
+        }
+
+        .topThinBar>div>div:nth-of-type(2)>p {
+            cursor: pointer;
         }
 
         nav {
@@ -120,7 +125,14 @@
             color: white;
             font-size: 14px;
             padding: 0 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
 
+        .searchBar>button:hover {
+            background-color: #3f3f3f;
         }
 
         .cartButton {
@@ -136,6 +148,7 @@
             height: 100%;
             font-size: 13px;
             /* justify-self: flex-end; */
+            cursor: pointer;
         }
 
         .cartButton>img {
@@ -151,10 +164,15 @@
             max-width: 180px;
             font-size: 13px;
             /* margin-left: 9%; */
-            /* height: 100%; */
+            height: 60px;
+            cursor: pointer;
+        }
+        .signinButton:hover {
+            background-color: #333;
+            border-radius: 5px;
         }
 
-        .signinButton > div{
+        .signinButton > div:nth-of-type(2){
            width: 37px;
            height: 37px;
            background-color: rgba(0,0,0,0.1);
@@ -163,6 +181,81 @@
            justify-content: center;
            align-items: center;
            margin-left: 25px;
+        }
+
+        #nav_signin {
+            position: relative;
+        }
+
+        #nav_signin > ul{
+            background-color: #333;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            list-style: none;
+            position: absolute;
+            left: -70px;
+            top: 34px;
+            width: 500%;
+            padding-top: 20px;
+            padding-left: 0;
+            border-radius: 5px;
+        }
+
+        #nav_signin > ul > li{
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        #nav_signin > ul > li > img{
+            width: 18px;
+            margin-right: 10px;
+        }
+
+        #nav_signin > ul > li:hover{
+            background-color: rgba(29, 28, 28, 0.356); 
+        }
+
+        #nav_signin > ul > hr{
+            width: 99%;
+            border: 1px solid #555;
+            
+        }
+
+        #nav_signin > ul > div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #nav_signin > ul > div> p:nth-of-type(1){
+            text-align: center;
+            font-size: 11px;
+            color: #b4b4b4;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        #nav_signin > ul > div> p:nth-of-type(2){
+            text-align: center;
+            margin-top: 0;
+        }
+        #nav_signin > ul > div> button{
+            color: #ffffff;
+            background-color: #e40046;
+            font-size: 13px;
+            margin-bottom: 0px;
+            cursor: pointer;
+            height: 40px;
+            border-radius: 3px;
+            border: 0;
+            font-weight: 400;
+            width: 90%;
+            margin-bottom: 10px;
         }
 
         /* CSS for top nav bar ends */
@@ -541,9 +634,29 @@
 
         /* CSS for login ends */
 
+                /* CSS for Go to top btn starts */
+
+                #go_to_top {
+            position: fixed;
+            top:90%;
+            left:96%;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: #333;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        /* CSS for Go to top btn ends */
+
 
         @media (min-width: 1582px) {
-            nav>div, .topThinBar>div {
+
+            nav>div,
+            .topThinBar>div {
                 max-width: 1600px;
             }
         }
@@ -693,7 +806,12 @@
                 <p>Gift Cards</p>
                 <p>Help Center</p>
                 <p>Sell On Snapdeal</p>
-                <p>Download App</p>
+                <img src="https://i4.sdlcdn.com/img/platinum09/downloadappicon2ndsep.png"
+                    style="width: 13px; height:18px; margin: 5px 0 0 5px;">
+                <p>
+
+                    Download App
+                </p>
             </div>
         </div>
 
@@ -707,8 +825,10 @@
 
                 <div class="searchBar">
                     <input type="text/" placeholder="Search products & brands">
-                    <button class="black-btn">Search</button>
+                    <button class="black-btn"><img src="https://img.icons8.com/material-outlined/24/ffffff/search.png"
+                            style="width: 20px; padding-right: 10px;" />Search</button>
                 </div>
+
             </div>
             <div>
                 <div class="cartButton">
@@ -716,14 +836,41 @@
                     <img src="https://img.icons8.com/windows/32/ffffff/shopping-cart.png">
                 </div>
                 <div class="signinButton">
-                    <p id="nav_signin" onclick="showLogin()">Sign In</p>
+                    <div id="nav_signin">
+                        <p>Sign In</p>
+                        <ul>
+                            <li><img src="https://img.icons8.com/material-outlined/24/ffffff/user--v1.png" />Your
+                                Account</li>
+                            <li><img
+                                    src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/ffffff/external-box-shipping-delivery-those-icons-lineal-those-icons-2.png" />
+                                Your Orders</li>
+                            <li><img src="https://img.icons8.com/material-outlined/24/ffffff/like--v1.png" />
+                                Shortlist
+                            </li>
+                            <li><img src="https://img.icons8.com/ios-glyphs/30/ffffff/get-cash.png" />
+                                SD Cash
+                            </li>
+                            <hr>
+                            <div onclick="showLogin()">
+                                <p>If you are a new user</p>
+                                <p>Register</p>
+                                <button>LOGIN</button>
+                            </div>
+                        </ul>
+                    </div>
+
                     <div>
-                        <img src="https://img.icons8.com/material-rounded/24/ffffff/user.png" style="width: 24px;"/>
+                        <img src="https://img.icons8.com/material-rounded/24/ffffff/user.png" style="width: 24px;" />
                     </div>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Go to top Button -->
+    <div id="go_to_top" onclick="goToTop()">
+        <img src="https://img.icons8.com/material-rounded/24/ffffff/thick-arrow-pointing-up.png"/>
+    </div>
 
 </body>
 
@@ -734,6 +881,8 @@
 
     //*****code for login and signup starts*****
 
+
+    
 
     function showLogin() {
         let overlay = document.getElementById("overlay");
@@ -755,6 +904,18 @@
     }
 
     let user = null; //User is defined here so that every function can access it.
+
+    if(localStorage.getItem("logged_user") === null){
+        localStorage.setItem("logged_user", "");
+    }
+
+    
+    if(localStorage.getItem("logged_user") != ""){
+        let logged_user = JSON.parse(localStorage.getItem("logged_user"));
+        user = logged_user;
+        console.log(user);
+        completeLogin();
+    }
 
     function validateUser() {
         if (localStorage.getItem("users") === null) {
@@ -788,12 +949,42 @@
     }
 
     function completeLogin(e) {
-        e.preventDefault();
-        alert("Logged in successfully.");//for testing remove before final submission
-        let nav_login = document.getElementById("nav_signin");
+        if(e != undefined){
+            e.preventDefault();
+        }
+        // alert("Logged in successfully.");
+        let nav_login = document.querySelector("#nav_signin > p:nth-of-type(1)");
+        console.log(user);
         let first_name = user.name.split(" ");
         nav_login.textContent = first_name[0];
+        document.querySelector("#nav_signin > ul").style.left = "-60px";
         removeOverlay();
+        localStorage.setItem("logged_user", JSON.stringify(user));
+        let login_btn = document.querySelector("#nav_signin > ul > div > button");
+        login_btn.style.backgroundColor = "#555";
+        login_btn.textContent = "LOGOUT";
+        let login_top_txt = document.querySelectorAll("#nav_signin > ul > div > p");
+        login_top_txt[0].style.display = "none";
+        login_top_txt[1].style.display = "none";
+        document.querySelector("#nav_signin > ul > div").onclick = function(){
+            logout();
+        }
+
+    }
+
+    function logout(){
+        let login_btn = document.querySelector("#nav_signin > ul > div > button");
+        login_btn.style.backgroundColor = "#e40046";
+        login_btn.textContent = "LOGIN";
+        let login_top_txt = document.querySelectorAll("#nav_signin > ul > div > p");
+        login_top_txt[0].style.display = "block";
+        login_top_txt[1].style.display = "block";
+        localStorage.setItem("logged_user", "");
+        document.querySelector("#nav_signin > ul > div").onclick = function(){
+            showLogin();
+        }
+        document.querySelector("#nav_signin > p:nth-of-type(1)").textContent = "Sign in";
+        document.querySelector("#nav_signin > ul").style.left = "-70px";
     }
 
     //This function will take number and change display attribute of login and signup.
@@ -865,8 +1056,29 @@
             removeOverlay();
         }
     }
+ 
+    //code for login and signup stops
 
-    //*****code for login and signup stops*****
+    //Code for signin dropdown starts
+    let signin_btn = document.querySelector(".signinButton")
+    signin_btn.onmouseenter = function(){showSigninDropDown(1)};
+    signin_btn.onmouseleave = function(){showSigninDropDown(2)};
 
+    function showSigninDropDown(b){
+        let menu = document.querySelector("#nav_signin > ul");
+        if(b == 1){
+            menu.style.display = "flex";
+        }else{
+            menu.style.display = "none";
+        }
+    }
+    //Code for signin dropdown ends
+
+
+
+    //Code for going to top of page
+    function goToTop(){
+        window.scrollTo(0,0);
+    }
 
 </script>

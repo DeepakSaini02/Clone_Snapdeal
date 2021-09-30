@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body{
+            width: 100%;
+            display: grid;
+            /* place-items: center; */
+            background: #f2f2f2;
+            font-family: "Roboto", sans-serif;
+        }
+        h1 {
+            font-size: 72px;
+            position: absolute;
+            top: 45%;
+        }
+        .mega-inner {
+            height: 450px !important;
+        }
+        .mega ul li {
+            position: relative;
+        }
+        .new-prod {
+            background-color: #00a651;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .mega ul > li .new-prod a{
+            color: #fff !important;
+            font-size: 12px !important;
+            height: 14px !important;
+            list-style: 14px !important;
+        }
+        .mega-heading {
+            color: rgba(3, 2, 26, 0.8) !important;
+
+        }
+        .submega-main .megaheading .mega-headingbox:last-child{
+            width: 15.2% !important;
+            }    
+            .megaMenu-main .BrandsCategoryHeading a{
+                color: rgba(3, 2, 26, 0.8);
+            }
+            .megaMenu-main .BrandsCategoryHeading a:hover{
+                background: #fc2779;
+                color: #fff !important;
+            }
+            .megaMenu-main > ul::before, .megaMenu-main > ul::after{
+                content: "";
+                display: table;
+            }
+            .megaMenu-main > ul::after {
+                clear: both;
+            }
+            .megaMenu-main > ul > li {
+                display: inline-block;
+                cursor: pointer;
+                padding: 0 11px !important;
+            }
+            .megaMenu-main > ul > li:hover .megaMenu-main > ul > li > a + div.arrowBox {
+                visibility: hidden;
+            }
+            .megaMenu-main > ul > li > ul {
+                display: none;
+                width: 100%;
+                background: #fff;
+                padding: 20px 0 0;
+                position: absolute;
+                z-index: 10002;
+                left: 50%;
+                transform:  translate(-50%);
+                margin: -15px 0 0 0;
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+                overflow: hidden;
+            }
+            .megaMenu-main ul li.menu-dropdown-icon:hover ul{
+                display: block;
+                padding: 10%;
+            }
+            .megaMenu-main > ul > li > ul:after {
+                clear: both;
+            }
+            .megaMenu-main > ul > li > ul > li {
+                margin: 0;
+                padding-bottom: 0;
+                list-style: none;
+                width: 100%;
+                background: none;
+                float: left;
+            }
+            .megaMenu-main > ul > li > ul > li > ul::before, .megaMenu-main > ul > li > ul > li > ul:after{
+                content: "";
+                display: table;
+            }
+            .megaMenu-main > ul > li > ul > li > ul:after{
+                clear: both;
+            }
+            .megaMenu-main > ul > li > ul > li > ul > li {
+                float: left;
+                width: 100%;
+                padding: 10px 0;
+                margin: 0;
+                font-size: .8em;
+            }
+            .megaMenu-main > ul > ul > ul > li > ul > li a{
+                border: 0;
+            }
+            .megaMenu-main > ul > li > ul.normal-sub{
+                width: 1140px;
+                padding: 0;
+            }
+            .megaMenu-main > ul > li > ul.normal-sum > li {
+                width: 100%;
+            }
+            ul.headernav li > a:hover, .megaMenu-main a :hover, .hoverCls{
+                color: #fc2779;
+            }   
+            a.Offers_Hover:hover{
+                border-bottom: none !important;
+                
+            }
+            a.Offers_hover:hover .bodyShadow{
+                display: none !important;
+            }
+            .megaheading {
+                margin: 0 auto;
+                text-align: center;
+                background: #fff;
+                height: 50px;
+                line-height: 47px;
+                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 1px 0 1px 0 rgba(0,0,0,0.1);
+                -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+                position: relative; 
+            }
+            .megaheading .mega-headingbox{
+                font-weight: 400;
+                font-size: 14px;
+                color: rgba(3, 2, 26, 0.6);
+                text-transform: capitalize;
+                display: inline-block;
+                vertical-align: middle;
+                border-bottom: 3px solid transparent;
+                width: 145px;
+            }
+            .megaheading .current_active{
+                font-weight: 600;
+                border-bottom: 3px solid #fc2779;
+                color: #fc2779;
+            }
+            .mega-heading{
+                height: 18px;
+                line-height: 18px;
+                font-weight: 600;
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+            .mega-heading a{
+               color: rgba(3, 2, 26, 0.8); 
+            }
+            .mega-inner .mega-heading.margintop{
+                margin-top: 30px;
+            }
+            .mega-inner .mega-heading.marginbottom{
+                margin-bottom: 10px;
+            }
+            .mega-inner:last-child{
+                border-left: solid 1px rgba(151, 151, 151, 0.20);
+
+            }
+            .mega-inner{
+                width: 216.6px;
+                height: 500px;
+                float: left;
+                padding: 20px;
+                text-align: left;
+            }
+            .bgwhite{
+                background-color: #fff;
+            }
+            .bggrey {
+                background-color: #f7f7f7;
+            }
+            .mega ul > li a{
+                font-size: 14px;
+                line-height: 18px;
+                margin: 2% auto;
+                display: block;
+                color: rgba(3, 2, 26, 0.5);
+                font-weight: 400;
+                text-transform: capitalize;
+                text-decoration: none;
+            }
+            .mega > ul {
+                padding: 0;
+                list-style: none;
+            }
+            .submega-main .megaheading .current_active:last-child{
+                border-bottom: none !important;
+            }
+            .submega-main .megaheading{
+                box-shadow: none !important;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0;
+            }
+            .submega-main{
+                position: relative;
+                z-index: 160000003;
+                background: #fff;
+                width: 15.25em !important;
+                margin: 0 -10px;
+            }
+            .submega-main > ul > li >ul {
+                margin: 0 250px;
+                width: 81.25em !important;
+                
+            }
+            .submega-main .megaheading{
+                box-shadow: none !important;
+            }
+            .submega-main .megaheading .mega-headingbox{
+                width: auto;
+                padding: 0;
+                margin: 0;
+                float: left;
+            }
+            .submega-main .megaheading .mega-headingbox:hover > ul {
+                display: block;
+            }
+            .submega-main .megaheading .mega-headingbox > a {
+                display: block;
+                padding: 0 19px;
+                position: relative;
+                z-index: 10003;
+                border-bottom: 3px solid transparent;
+                color: rgba(3, 2, 26, 0.6);
+                text-decoration: none;
+
+            }
+            .submega-main .megaheading .mega-headingbox > a.current_active, .submega-main .megaheading .mega-headingbox > a:hover{
+                font-weight: 10;
+                color: #fc2779;
+                text-decoration: none;
+                border-bottom: 2px solid #fc2779;
+            }
+            .submega-main .magaheading .mega-headingbox:last-child{
+                position: absolute;
+                /* right: 0;
+                top: 0;
+                padding: 0; */
+            }
+            .submega-main .megaheading .mega-headingbox a:last-child{
+                padding: 0;
+                text-decoration: none;
+                font-size: 12px;
+            }
+            .submega-main .magaheading .mega-headingbox:last-child{
+                width:  8.2 !important;
+            }
+            .mega-menu-image{
+                width: 117px;
+                height: auto;
+                margin-left: -21px;
+                margin-top: -19px;
+            }
+            .mega-menu-image img{
+                width: 217px;
+                height: auto;
+            }
+             </style>
+</head>
+<body>
+    <div class="megaMenu-main submega-main home-menu-fixed">
+        <ul class="megaheading">
+            <li class="mega-headingbox"><a href="">All Offers</a>
+                <ul>
+                    <li>
+                        <div class="megatopWrapper">
+                            <div class="mega-inner bgwhite">
+                                <div class="mega">
+                                    <div class="mega-heading"><a href="" target="_blank">Autum/Winter Special</a></div>
+                <ul>
+                    <li><a href="">Air Purifier</a></li>
+                    <li><a href="">Socks</a></li>
+                    <li><a href="">Air Freshner</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+
+                </ul>
+                <div class="mega-heading margintop"><a href="">Body Art</a></div>
+                </div> 
+                </div>
+                <div class="mega-inner bggrey">
+                    <div class="mega">
+                <div class="mega-heading"><a href="">Eyes</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a><span class="new-prod"><a href="">NEW</a></span></li>
+                </ul>      
+                <div class="mega-heading margintop"><a href="" target="_blank">Makeup</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                </ul>
+                </div>
+                </div>
+                <div class="mega-inner bgwhite">
+                    <div class="mega">
+                        <div class="mega-heading"><a href="" target="_blank">Lips</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                        <div class="mega-heading margintop"><a href="" target="_blank">Mails</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="mega-inner bggrey">
+                    <div class="mega-menu-image"><img src="https://n4.sdlcdn.com/imgs/i/f/f/BlockbusterDeals-cb277.jpg" alt=""></div>
+                </div>
+                </div>
+                </li>
+                </ul>
+                </li>
+
+                
+                <div class="mega-headingbox"><a href="" target="_blank" class="Offers_Hover" id="OfferBlock">
+
+                </a>
+            </div>
+        </ul>
+    </div>
+    
+    <div class="megaMenu-main submega-main home-menu-fixed">
+        <ul class="megaheading">
+            <li class="mega-headingbox"><a href="">Mobile & Tablets</a>
+                <ul>
+                    <li>
+                        <div class="megatopWrapper">
+                            <div class="mega-inner bgwhite">
+                                <div class="mega">
+                                    <div class="mega-heading"><a href="" target="_blank">Autum/Winter Special</a></div>
+                <ul>
+                    <li><a href="">Air Purifier</a></li>
+                    <li><a href="">Socks</a></li>
+                    <li><a href="">Air Freshner</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+
+                </ul>
+                <div class="mega-heading margintop"><a href="">Body Art</a></div>
+                </div> 
+                </div>
+                <div class="mega-inner bggrey">
+                    <div class="mega">
+                <div class="mega-heading"><a href="">Eyes</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a><span class="new-prod"><a href="">NEW</a></span></li>
+                </ul>      
+                <div class="mega-heading margintop"><a href="" target="_blank">Makeup</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                </ul>
+                </div>
+                </div>
+                <div class="mega-inner bgwhite">
+                    <div class="mega">
+                        <div class="mega-heading"><a href="" target="_blank">Lips</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                        <div class="mega-heading margintop"><a href="" target="_blank">Mails</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="mega-inner bggrey">
+                    <div class="mega-menu-image"><img src="https://n2.sdlcdn.com/imgs/i/7/q/Mobiles_17jan-197ca.jpg" alt=""></div>
+                </div>
+                </div>
+                </li>
+                </ul>
+                </li>
+                <div class="mega-headingbox"><a href="" target="_blank" class="Offers_Hover" id="OfferBlock">
+
+                </a>
+            </div>
+        </ul>
+    </div>
+    <div class="megaMenu-main submega-main home-menu-fixed">
+        <ul class="megaheading">
+            <li class="mega-headingbox"><a href="">Electronics</a>
+                <ul>
+                    <li>
+                        <div class="megatopWrapper">
+                            <div class="mega-inner bgwhite">
+                                <div class="mega">
+                                    <div class="mega-heading"><a href="" target="_blank">Autum/Winter Special</a></div>
+                <ul>
+                    <li><a href="">Air Purifier</a></li>
+                    <li><a href="">Socks</a></li>
+                    <li><a href="">Air Freshner</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+
+                </ul>
+                <div class="mega-heading margintop"><a href="">Body Art</a></div>
+                </div> 
+                </div>
+                <div class="mega-inner bggrey">
+                    <div class="mega">
+                <div class="mega-heading"><a href="">Eyes</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a><span class="new-prod"><a href="">NEW</a></span></li>
+                </ul>      
+                <div class="mega-heading margintop"><a href="" target="_blank">Makeup</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                </ul>
+                </div>
+                </div>
+                <div class="mega-inner bgwhite">
+                    <div class="mega">
+                        <div class="mega-heading"><a href="" target="_blank">Lips</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                        <div class="mega-heading margintop"><a href="" target="_blank">Mails</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="mega-inner bggrey">
+                    <div class="mega-menu-image"><img src="https://n4.sdlcdn.com/imgs/i/1/o/electronics-7e68c.jpg" alt=""></div>
+                </div>
+                </div>
+                </li>
+                </ul>
+                </li>
+                <div class="mega-headingbox"><a href="" target="_blank" class="Offers_Hover" id="OfferBlock">
+
+                </a>
+            </div>
+        </ul>
+    </div>
+
+    <div class="megaMenu-main submega-main home-menu-fixed">
+        <ul class="megaheading">
+            <li class="mega-headingbox"><a href="">Computers & Gaming</a>
+                <ul>
+                    <li>
+                        <div class="megatopWrapper">
+                            <div class="mega-inner bgwhite">
+                                <div class="mega">
+                                    <div class="mega-heading"><a href="" target="_blank">Autum/Winter Special</a></div>
+                <ul>
+                    <li><a href="">Air Purifier</a></li>
+                    <li><a href="">Socks</a></li>
+                    <li><a href="">Air Freshner</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+
+                </ul>
+                <div class="mega-heading margintop"><a href="">Body Art</a></div>
+                </div> 
+                </div>
+                <div class="mega-inner bggrey">
+                    <div class="mega">
+                <div class="mega-heading"><a href="">Eyes</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a><span class="new-prod"><a href="">NEW</a></span></li>
+                </ul>      
+                <div class="mega-heading margintop"><a href="" target="_blank">Makeup</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                </ul>
+                </div>
+                </div>
+                <div class="mega-inner bgwhite">
+                    <div class="mega">
+                        <div class="mega-heading"><a href="" target="_blank">Lips</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                        <div class="mega-heading margintop"><a href="" target="_blank">Mails</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="mega-inner bggrey">
+                    <div class="mega-menu-image"><img src="https://n1.sdlcdn.com/imgs/i/1/r/Laptopacc_28oct-581f8.jpg" alt=""></div>
+                </div>
+                </div>
+                </li>
+                </ul>
+                </li>
+                <div class="mega-headingbox"><a href="" target="_blank" class="Offers_Hover" id="OfferBlock">
+
+                </a>
+            </div>
+        </ul>
+    </div>
+
+    <div class="megaMenu-main submega-main home-menu-fixed">
+        <ul class="megaheading">
+            <li class="mega-headingbox"><a href="">Home & Kitchen</a>
+                <ul>
+                    <li>
+                        <div class="megatopWrapper">
+                            <div class="mega-inner bgwhite">
+                                <div class="mega">
+                                    <div class="mega-heading"><a href="" target="_blank">Autum/Winter Special</a></div>
+                <ul>
+                    <li><a href="">Air Purifier</a></li>
+                    <li><a href="">Socks</a></li>
+                    <li><a href="">Air Freshner</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+
+                </ul>
+                <div class="mega-heading margintop"><a href="">Body Art</a></div>
+                </div> 
+                </div>
+                <div class="mega-inner bggrey">
+                    <div class="mega">
+                <div class="mega-heading"><a href="">Eyes</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a><span class="new-prod"><a href="">NEW</a></span></li>
+                </ul>      
+                <div class="mega-heading margintop"><a href="" target="_blank">Makeup</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                </ul>
+                </div>
+                </div>
+                <div class="mega-inner bgwhite">
+                    <div class="mega">
+                        <div class="mega-heading"><a href="" target="_blank">Lips</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                        <div class="mega-heading margintop"><a href="" target="_blank">Mails</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="mega-inner bggrey">
+                    <div class="mega-menu-image"><img src="https://n1.sdlcdn.com/imgs/i/1/r/GM_28oct-e8cd1.jpg" alt=""></div>
+                </div>
+                </div>
+                </li>
+                </ul>
+                </li>
+                <div class="mega-headingbox"><a href="" target="_blank" class="Offers_Hover" id="OfferBlock">
+
+                </a>
+            </div>
+        </ul>
+    </div>
+
+    <div class="megaMenu-main submega-main home-menu-fixed">
+        <ul class="megaheading">
+            <li class="mega-headingbox"><a href="">Men's Fashion</a>
+                <ul>
+                    <li>
+                        <div class="megatopWrapper">
+                            <div class="mega-inner bgwhite">
+                                <div class="mega">
+                                    <div class="mega-heading"><a href="" target="_blank">Autum/Winter Special</a></div>
+                <ul>
+                    <li><a href="">Air Purifier</a></li>
+                    <li><a href="">Socks</a></li>
+                    <li><a href="">Air Freshner</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+                    <li><a href="">Face Primer</a></li>
+
+                </ul>
+                <div class="mega-heading margintop"><a href="">Body Art</a></div>
+                </div> 
+                </div>
+                <div class="mega-inner bggrey">
+                    <div class="mega">
+                <div class="mega-heading"><a href="">Eyes</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a></li>
+                    <li><a href="" target="_blank">Kajal</a><span class="new-prod"><a href="">NEW</a></span></li>
+                </ul>      
+                <div class="mega-heading margintop"><a href="" target="_blank">Makeup</a></div>
+                <ul>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                    <li><a href="" target="_blank">Eye</a></li>
+                </ul>
+                </div>
+                </div>
+                <div class="mega-inner bgwhite">
+                    <div class="mega">
+                        <div class="mega-heading"><a href="" target="_blank">Lips</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                        <div class="mega-heading margintop"><a href="" target="_blank">Mails</a></div>
+                        <ul>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                            <li><a href="" target="_blank">Eye</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="mega-inner bggrey">
+                    <div class="mega-menu-image"><img src="https://n4.sdlcdn.com/imgs/i/f/f/BlockbusterDeals-cb277.jpg" alt=""></div>
+                </div>
+                </div>
+                </li>
+                </ul>
+                </li>
+                <div class="mega-headingbox"><a href="" target="_blank" class="Offers_Hover" id="OfferBlock">
+
+                </a>
+            </div>
+        </ul>
+    </div>
+</body>
+</html>

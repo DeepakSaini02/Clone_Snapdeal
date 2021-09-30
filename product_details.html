@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Product Details</title>
+    <style>
+        body{
+            background-color: #F5F5F5;
+
+        }
+        .container {
+            border: 2px solid blue;
+            width: 90%;
+            margin: auto;
+            background-color:white;
+        }
+
+        #parent {
+            display: inline-block;
+            width: 40%;
+        }
+
+        #parent>img {
+            height: 500px;
+            max-width: 100%;
+        }
+
+        #parent2 {
+            width: 48%;
+            display: inline-block;
+            vertical-align: top;
+            text-overflow: clip;
+        }
+
+        .stars-outer {
+            display: inline-block;
+            position: relative;
+            font-family: FontAwesome;
+        }
+
+        .stars-outer::before {
+            content: "\f006 \f006 \f006 \f006 \f006";
+            font-size: 14px;
+        }
+
+        .stars-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            /* width: 50%; */
+        }
+
+        .stars-inner::before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+            color: #f8ce0b;
+            font-size: 14px;
+        }
+
+        #offer {
+            /* border: 2px solid yellow; */
+            width: 35%;
+            display: inline-grid;
+            margin-left: 30%;
+        }
+
+        #offer>div>p {
+            margin: 8px;
+
+        }
+
+
+        #addAndBuy {
+            margin-left: 5%;
+        }
+
+        #addAndBuy>button {
+            font-family: "font-regular";
+            width: 135px;
+            height: 50px;
+            margin: 11px;
+            color: white;
+            border-radius: 4px;
+        }
+
+        #addAndBuy>button:nth-child(1) {
+            background-color: #212121;
+        }
+
+        #addAndBuy>button:nth-child(2) {
+            background-color: #e40046;
+        
+        }
+
+        #returnDiv>h5,h6{
+            margin: 2px;
+            font-size: 12px;
+    color: #666666;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    let product = JSON.parse(localStorage.getItem("productdetails"));
+    
+
+    let parent = document.createElement("div");
+    parent.id = "parent";
+    document.querySelector(".container").append(parent);
+
+    let product_image1 = document.createElement("img")
+    product_image1.src = product.image1
+
+    // let product_image2=document.createElement("img")
+    // product_image2.src=product.image2
+
+    let parent2 = document.createElement("div");
+    parent2.id = "parent2";
+    document.querySelector(".container").append(parent2);
+
+    let product_name = document.createElement("p")
+    product_name.textContent = product.name
+
+    let starouter = document.createElement("div");
+    starouter.className = "stars-outer"
+
+    let starinner = document.createElement("div");
+    starinner.className = "stars-inner"
+
+    let iconstar = document.createElement("i");
+    iconstar.className = "fa fa-star"
+
+    let rating = product.rating * 20 + "%";
+    starinner.style.width = rating;
+
+    starinner.append(iconstar)
+    starouter.append(starinner)
+
+    let hr = document.createElement("hr");
+
+    let pricing = document.createElement("div");
+
+    let mrp = document.createElement("span");
+    mrp.innerText = "Rs. " + product.price + " "+"\n";
+    mrp.style.textDecoration = "line-through";
+    mrp.style.marginRight = "2px";
+    mrp.style.color = "#bbbbbb"
+    // mrp.style.display = "inline-Block";
+  
+   
+
+    let discountPrice = document.createElement("span");
+    discountPrice.innerText = "Rs. " + Math.floor(product.price * (1 - (product.discount * 0.01)));
+    discountPrice.style.marginRight = "5px";
+    discountPrice.style.color = "red";
+    discountPrice.style.fontSize = "24px";
+
+    let discount = document.createElement("div");
+    discount.style.display = "inline-block";
+    discount.innerText = product.discount + "% OFF"+"\n";
+    discount.style.border = "1px solid #999";
+    discount.style.boxSizing = "border-box";
+    discount.style.padding = "4px";
+    discount.style.fontSize = "10px";
+
+
+    pricing.style.display = "inline"
+    pricing.style.width = "10%"
+    pricing.append(mrp, discountPrice, discount);
+
+    
+
+    let offer = document.createElement("div")
+    let headpara = document.createElement("p")
+    offer.id = "offer";
+    headpara.textContent = "(3) Offers | Applicable on cart";
+    headpara.style.fontSize = "14px";
+
+
+    let offer1 = document.createElement("div")
+    let para1 = document.createElement("p")
+
+    para1.textContent = "15% Instant Discount Using Rupay Debit & Credit Cards T&C"
+
+    offer1.append(para1)
+
+    let offer2 = document.createElement("div")
+    let para2 = document.createElement("p")
+
+    para2.textContent = "25% Instant Discount Using IDBI Bank Credit Cards T&C"
+    offer2.append(para2)
+
+    let offer3 = document.createElement("div")
+    let para3 = document.createElement("p")
+    para3.textContent = "20% Cashback Using Dhani Cards. Min. Order: Rs. 100 T&C"
+    offer3.append(para3)
+
+    offer.append(headpara, offer1, offer2, offer3)
+    offer.style.margin = "0 400px"
+    offer.style.border = "1px solid black"
+
+    let addAndBuy = document.createElement('div')
+    addAndBuy.id = "addAndBuy";
+    let addtoCartBtn = document.createElement('button')
+    addtoCartBtn.textContent = 'ADD TO CART';
+
+    let buyNowBtn = document.createElement('button')
+    buyNowBtn.textContent = 'BUY NOW'
+
+    addAndBuy.append(addtoCartBtn, buyNowBtn)
+
+    let returnDiv=document.createElement('div')
+    let head5=document.createElement('h5')
+    head5.textContent=" 7 Days Easy Returns";
+
+    let head6=document.createElement('h6')
+    head6.textContent=" Trustpay: 100% Payment Protection. Return or Replacement is applicable for 7 days after delivery.";
+    returnDiv.id="returnDiv"
+
+    returnDiv.append(head5,head6)
+    parent.append(product_image1)
+    parent2.append(product_name, starouter, hr, pricing, offer, addAndBuy,returnDiv)
+
+    addtoCartBtn.onclick=function(){
+        addtoCart(product)
+    }
+
+    buyNowBtn.onclick=function(){
+        buyNow(product)
+    }
+
+    if(localStorage.getItem("mycart")==null){
+        localStorage.setItem("mycart",JSON.stringify([]))
+    }
+
+function addtoCart(product){
+
+window.location.href="myCart.html"
+
+let mycart=JSON.parse(localStorage.getItem("mycart"))
+mycart.push(product)
+localStorage.setItem("mycart",JSON.stringify(mycart))
+
+}
+
+function buyNow(product){
+
+window.location.href="payment.html"
+
+}
+
+    console.log(product)
+</script>

@@ -16,20 +16,22 @@
 
         }
 
-        input[type=text]{
+        input[type=text] {
             height: 32px;
 
         }
-        input[type=number]{
+
+        input[type=number] {
             height: 32px;
 
         }
+
         input[type=tel] {
             height: 32px;
 
         }
 
-        input[type=address]  {
+        input[type=address] {
             height: 55px;
         }
 
@@ -41,29 +43,120 @@
 
         #finalAdd {
             display: grid;
-    border: 2px solid #ECEFF1;
-    width: 20%;
-    margin-left: 20px;
-    padding: 6px;
-    gap: 6px;
+            border: 2px solid #ECEFF1;
+            width: 20%;
+            margin-left: 20px;
+            padding: 6px;
+            gap: 6px;
 
         }
-   
-        #myform>button{
-           grid-area: 9/2/10/3;
-           width: 50%;
-           background-color: #E91E63;
+
+        #myform>button {
+            grid-area: 9/2/10/3;
+            width: 50%;
+            background-color: #E91E63;
             color: white;
             padding: 10px 10px;
             border: 2px solid #E91E63;
         }
-        #boxbtn{
-            background-color: #E91E63;
-    color: white;
-    padding: 7px 10px;
-    border: 2px solid #E91E63;
-    width: 50%;
 
+        #boxbtn {
+            background-color: #E91E63;
+            color: white;
+            padding: 7px 10px;
+            border: 2px solid #E91E63;
+            width: 50%;
+
+        }
+
+        /* #pay {
+            border: 2px solid blue;
+
+        } */
+
+        #box2 {
+            display: grid;
+            grid-template-columns: 15% 50%;
+            gap: 10px;
+        }
+
+        #buttondiv {
+            /* border: 2px solid #E91E63; */
+            /* display: grid; */
+            /* width: 10%; */
+            /* gap: 12px; */
+            padding: 10px;
+        }
+
+        #buttondiv>button {
+            /* padding: 13px 10px; */
+            width: 142px;
+            height: 50px;
+            background-color: white;
+            border: 2px solid #BDBDBD;
+
+        }
+
+        /* #contentDiv {
+            border: 2px solid green;
+        } */
+
+        #cardInfo {
+            display: grid;
+            grid-template-columns: 15% 30%;
+            gap: 9px;
+            margin: 15px
+        }
+
+        #cardInfo>button {
+            height: 45px;
+            width: 185px;
+            background-color: #e40046;
+            border: #e40046;
+            border-radius: 6px;
+            color: white;
+        }
+
+        #cashInfo {
+            /* background-color: hotpink;
+            display: grid;
+            grid-template-columns: 15% 30%;
+            gap: 9px; */
+            margin: 15px
+        }
+
+        #cashInfo>button {
+            height: 45px;
+            width: 185px;
+            background-color: #e40046;
+            border: #e40046;
+            border-radius: 6px;
+            color: white;
+        }
+
+        #upiInfo {
+            /* background-color: indigo; */
+            display: grid;
+            grid-template-columns: 30% 15%;
+            gap: 9px;
+            margin: 15px;
+        }
+
+        #verify {
+            color: white;
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+            background-color: black;
+        }
+
+        #upiInfo>button{
+            height: 45px;
+            width: 185px;
+            background-color: #e40046;
+            border: #e40046;
+            border-radius: 6px;
+            color: white;
         }
     </style>
 </head>
@@ -112,6 +205,7 @@
     let myform = document.getElementById('myform');
     function daddress(e) {
         e.preventDefault();
+
         let pincode = document.getElementById('pincode').value;
         let name = document.getElementById('name').value;
 
@@ -132,32 +226,241 @@
 
         myform.style.display = "none";
 
-        let div = document.createElement('div')
+        let div = document.createElement('div');
         div.id = "finalAdd";
-        let nameDiv = document.createElement('div');
+        nameDiv = document.createElement('div');
         nameDiv.append(name);
 
-        let addressDiv = document.createElement('div');
+        addressDiv = document.createElement('div')
         addressDiv.append(address);
 
 
-        let cityDiv = document.createElement('div');
+        cityDiv = document.createElement('div');
         cityDiv.append(city + " - " + pincode);
 
-        let stateDiv = document.createElement('div');
+        stateDiv = document.createElement('div');
         stateDiv.append(state);
 
-        let mobileDiv = document.createElement('div');
+        mobileDiv = document.createElement('div');
         mobileDiv.append("Phone: " + mobile);
 
 
-        let boxBotton=document.createElement('button');
-        boxBotton.id='boxbtn';
-        boxBotton.textContent="DELIVERY HERE";
-        div.append(nameDiv, addressDiv, cityDiv, stateDiv, mobileDiv,boxBotton);
+        let boxBotton = document.createElement('button');
+        boxBotton.id = 'boxbtn';
+        boxBotton.textContent = "DELIVERY HERE";
+        div.append(nameDiv, addressDiv, cityDiv, stateDiv, mobileDiv, boxBotton);
         document.querySelector('body').append(div);
 
+        let clickCount = 0;
+        boxBotton.onclick = function () {
+            clickCount++;
+            boxBotton.style.display = "none";
+            payment(clickCount);
+        }
 
+
+    }
+
+    let arrofCart = JSON.parse(localStorage.getItem('mycart'));
+    sum = 0;
+
+    for (let i = 0; i < arrofCart.length; i++) {
+        sum = sum + Math.floor(arrofCart[i].price * (1 - (arrofCart[i].discount * 0.01)));
+    }
+    function payment(c) {
+        if (c == 1) {
+
+            let paymentDiv = document.createElement('div');
+            paymentDiv.id = 'pay';
+            let h1 = document.createElement('h1');
+            h1.textContent = 'Make Payment';
+            document.querySelector('body').append(paymentDiv);
+
+            let box2 = document.createElement('div');
+            box2.id = 'box2';
+
+            //create button div and add 3 payment option button
+            let buttonDiv = document.createElement('div');
+            buttonDiv.id = 'buttondiv';
+
+            let creditbtn = document.createElement('button');
+            creditbtn.textContent = 'Credit Card';
+            creditbtn.onclick = function () {
+                contentDiv.innerHTML = null;
+                creditCard();
+            }
+
+            let cashbtn = document.createElement('button');
+            cashbtn.textContent = 'Cash on Dilivery';
+            cashbtn.onclick = function () {
+                contentDiv.innerHTML = null;
+                cashON();
+            }
+
+            let upiBtn = document.createElement('button');
+            upiBtn.textContent = 'UPI';
+            upiBtn.onclick = function () {
+                contentDiv.innerHTML = null;
+                upi();
+            }
+
+            buttonDiv.append(creditbtn, cashbtn, upiBtn);
+
+            //create content of payment option button
+            let contentDiv = document.createElement('div');
+            contentDiv.id = 'contentDiv';
+
+            let contentHeadingDiv = document.createElement('div');
+            contentHeadingDiv.textContent = 'Pay using Credit Card';
+
+            let cardInfo = document.createElement('form');
+            cardInfo.id = "cardInfo";
+
+
+            let cardNoLabel = document.createElement('label');
+            cardNoLabel.textContent = "Card Number";
+
+            let cardinput = document.createElement('input');
+            cardinput.type = "number";
+            cardinput.required = true;
+
+
+            let exDateLabel = document.createElement('label');
+            exDateLabel.textContent = "Expiry Date";
+
+            let exdateinput = document.createElement('input');
+            exdateinput.type = "text";
+            exdateinput.placeholder = "MM/YY";
+            exdateinput.required = true;
+            //    console.log(exdateinput)
+
+            let cvvLabel = document.createElement('label');
+            cvvLabel.textContent = "CVV";
+
+            let cvvinput = document.createElement('input');
+            cvvinput.type = "password";
+            cvvinput.required = true;
+
+
+            let finalPaybtn = document.createElement('button');
+            finalPaybtn.textContent = 'PAY RS.' + sum;
+
+            cardInfo.append(cardNoLabel, cardinput, exDateLabel, exdateinput, cvvLabel, cvvinput, finalPaybtn);
+
+            cardInfo.onsubmit = function (event) {
+                event.preventDefault();
+                alert("Payment Successfully Done");
+            }
+
+            contentDiv.append(contentHeadingDiv, cardInfo);
+            box2.append(buttonDiv, contentDiv);
+            paymentDiv.append(h1, box2);
+
+
+        }
+
+
+
+    }
+    function creditCard() {
+
+        let contentHeadingDiv = document.createElement('div');
+        contentHeadingDiv.textContent = 'Pay using Credit Card';
+
+        let cardInfo = document.createElement('form');
+        cardInfo.id = "cardInfo";
+
+
+        let cardNoLabel = document.createElement('label');
+        cardNoLabel.textContent = "Card Number";
+
+        let cardinput = document.createElement('input');
+        cardinput.type = "number";
+        cardinput.required = true;
+
+
+        let exDateLabel = document.createElement('label');
+        exDateLabel.textContent = "Expiry Date";
+
+        let exdateinput = document.createElement('input');
+        exdateinput.type = "text";
+        exdateinput.placeholder = "MM/YY";
+        exdateinput.required = true;
+        //    console.log(exdateinput)
+
+        let cvvLabel = document.createElement('label');
+        cvvLabel.textContent = "CVV";
+
+        let cvvinput = document.createElement('input');
+        cvvinput.type = "password";
+        cvvinput.required = true;
+
+
+        let finalPaybtn = document.createElement('button');
+        finalPaybtn.textContent = 'PAY RS.' + sum;
+
+        cardInfo.append(cardNoLabel, cardinput, exDateLabel, exdateinput, cvvLabel, cvvinput, finalPaybtn);
+
+        cardInfo.onsubmit = function (event) {
+            event.preventDefault();
+            alert("Payment Successfully Done");
+        }
+
+        contentDiv.append(contentHeadingDiv, cardInfo);
+        console.log("yoyoyo");
+
+    }
+    function cashON() {
+        let contentHeadingDiv = document.createElement('div');
+        contentHeadingDiv.textContent = 'Pay using Cash On Delivery';
+
+        let cashInfo = document.createElement('form');
+        cashInfo.id = "cashInfo";
+
+
+
+        let placeOrder = document.createElement('button');
+        placeOrder.textContent = 'PLACE COD ORDER';
+
+        cashInfo.append(placeOrder);
+
+        cashInfo.onsubmit = function (event) {
+            event.preventDefault();
+            alert("Order Successfully Placed");
+        }
+
+        contentDiv.append(contentHeadingDiv, cashInfo);
+        console.log("yoyo");
+    }
+
+    function upi() {
+        let contentHeadingDiv = document.createElement('div');
+        contentHeadingDiv.textContent = 'Pay using UPI';
+
+        let upiInfo = document.createElement('form');
+        upiInfo.id = "upiInfo";
+
+        let vpaInput = document.createElement('input');
+        vpaInput.type = "number";
+        vpaInput.required = true;
+
+
+        let varifylabel = document.createElement('label');
+        varifylabel.textContent = "VERIFY";
+        varifylabel.id = 'verify';
+
+        let finalPaybtn = document.createElement('button');
+        finalPaybtn.textContent = 'PAY RS.' + sum;
+
+        upiInfo.append(vpaInput, varifylabel, finalPaybtn);
+
+        upiInfo.onsubmit = function (event) {
+            event.preventDefault();
+            alert("Payment Successfully Done");
+        }
+
+        contentDiv.append(contentHeadingDiv, upiInfo);
+        console.log("yo");
 
     }
 </script>

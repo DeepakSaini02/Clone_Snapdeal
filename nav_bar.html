@@ -1527,6 +1527,12 @@
             name.textContent = data.name;
             let remove = document.createElement("button");
             remove.textContent = "X REMOVE";
+
+//try to add remove item from the cart
+            remove.onclick=function(){
+                removeItem(k);
+            }
+
             div1_1.append(name, remove);
             div1.append(div1_0, div1_1);
             
@@ -1554,6 +1560,16 @@
             div5.append(sub);
             container.append(div1, div2, div3, div4, div5)
             cart_contents.append(container);
+        }
+
+        function removeItem(r){
+            for(let i=0;i<cart_items.length;i++){
+                if(cart_items[i].name==r){
+                    cart_items.splice(i,1)
+                }
+            }
+        //    console.log(cart_items)
+           localStorage.setItem("mycart",JSON.stringify(cart_items))
         }
         document.getElementById("cart-sub-total-price").textContent = "Rs." + sum;
         document.getElementById("cart-sub-total-btn").textContent = "PROCEED TO PAY Rs. " + sum;

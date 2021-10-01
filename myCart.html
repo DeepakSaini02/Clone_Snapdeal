@@ -132,6 +132,9 @@
     div3.id = "ThirdDiv"
     let proceed = document.createElement("button");
     proceed.textContent = "PROCEED TO CHECKOUT";
+    proceed.onclick=function(){
+        window.location.href="payment.html"
+    }
     let cart = document.createElement("button");
     cart.textContent = "VIEW CART";
     div3.append(proceed, cart);

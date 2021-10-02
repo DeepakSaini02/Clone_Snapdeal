@@ -1200,7 +1200,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button id="cart-sub-total-btn">PROCEED TO PAY Rs.1,169</button>
+                                <button id="cart-sub-total-btn" onclick="goToPaymentPage()">PROCEED TO PAY Rs.1,169</button>
                             </div>
                         </div>
                     </div>
@@ -1585,6 +1585,10 @@
         }else{
             fillCartContent();
         }
+    }
+
+    function goToPaymentPage(){
+        window.location.href="payment.html";
     }
 
 

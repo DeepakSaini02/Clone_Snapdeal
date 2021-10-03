@@ -1,13 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.snapdeal.com/img/icons/finalFavicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
     <style>
+        body {
+            margin: 0;
+            background-color: #f7f7f7;
+            font-family: 'Open Sans', sans-serif;
+        }
+
         #myform {
             display: grid;
             margin-left: 50px;
@@ -24,6 +34,7 @@
 
         input[type=number] {
             height: 32px;
+            margin-right: 15px;
 
         }
 
@@ -37,9 +48,11 @@
         }
 
         h1 {
-            background-color: black;
+            background-color: #333;
             color: white;
             padding: 10px 33px;
+            margin-top: 10px;
+            font-size: 22px;
         }
 
         #finalAdd {
@@ -76,8 +89,8 @@
         } */
 
         #box2 {
-            display: grid;
-            grid-template-columns: 15% 50%;
+            display: flex;
+            /* grid-template-columns: 30% 50%; */
             gap: 10px;
         }
 
@@ -86,7 +99,11 @@
             /* display: grid; */
             /* width: 10%; */
             /* gap: 12px; */
-            padding: 10px;
+            /* padding: 10px; */
+            border-right: 1px solid #e5e5e5;
+            display: flex;
+            flex-direction: column;
+            width: 142px;
         }
 
         #buttondiv>button {
@@ -94,13 +111,25 @@
             width: 142px;
             height: 50px;
             background-color: white;
-            border: 2px solid #BDBDBD;
-
+            border: 0;
         }
 
-        /* #contentDiv {
-            border: 2px solid green;
-        } */
+        #buttondiv>button:hover {
+            /* padding: 13px 10px; */
+            background-color: #e5e5e5;
+            /* border: 2px solid #BDBDBD; */
+        }
+
+        #buttondiv>button:focus {
+            border-left: 2px solid red;
+            border-right: 2px solid white;
+        }
+
+        #contentDiv {
+            /* border: 2px solid green; */
+            display: flex;
+            flex-direction: column;
+        }
 
         #cardInfo {
             display: grid;
@@ -138,8 +167,10 @@
 
         #upiInfo {
             /* background-color: indigo; */
-            display: grid;
-            grid-template-columns: 30% 15%;
+            /* display: grid;
+            grid-template-columns: 30% 15%; */
+            display: flex;
+            flex-direction: column;
             gap: 9px;
             margin: 15px;
         }
@@ -152,7 +183,7 @@
             background-color: black;
         }
 
-        #upiInfo>button {
+        #upiInfo>div>button {
             height: 45px;
             width: 185px;
             background-color: #e40046;
@@ -161,7 +192,7 @@
             color: white;
         }
 
-        #proceedtoPaybtn{
+        #proceedtoPaybtn {
             height: 45px;
             width: 185px;
             background-color: #e40046;
@@ -180,7 +211,7 @@
         #cardpara {
             margin: -45px 1px;
             width: 376px;
-           
+
         }
 
         #cashhead {
@@ -194,16 +225,16 @@
         } */
 
         #upihead {
-            margin: -48px 2px;
+            margin-top: 0;
             width: 426px;
             color: #BDBDBD;
         }
 
-        #upipara {
+        /* #upipara {
             margin: 62px -199px;
             width: 371px;
-            
-        }
+
+        } */
 
 
         #cart-contents {
@@ -285,55 +316,97 @@
 
 
 
-        #cart-contents{
+        #cart-contents {
             height: 300px;
             /* border: 2px solid green; */
         }
 
+        /* CSS for top bar */
+        #top-bar {
+            background-color: #e53f46;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #top-bar>div {
+            max-width: 1024px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-size: 13px;
+        }
+
+        #payment-area{
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            background-color: white;
+            min-height: 500px;
+            max-width: 1024px;
+            margin: auto;
+        }
 
 
-
+        @media (min-width:1366px) {
+            #top-bar>div, #payment-area {
+                max-width: 1280px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <h1>Delivery Address</h1>
+    <div id="top-bar">
+        <div>
+            <a href="home.html">
+                <img class="sd-logo" src="https://i3.sdlcdn.com/img/snapdeal/darwin/logo/sdLatestLogo.svg">
+            </a>
+            <p>100% Payment Protection, Easy Returns Policy</p>
+        </div>
+    </div>
 
-    <form action="" onsubmit="daddress(event)" id="myform">
-        <label for="">Pincode</label>
-        <input type="number" name="" id="pincode" placeholder="6 digit pincode" required>
+    <div id="payment-area">
+        <h1>Delivery Address</h1>
 
-        <label for="">Name</label>
-        <input type="text" id="name" placeholder="Full Name" required>
+        <form action="" onsubmit="daddress(event)" id="myform">
+            <label for="">Pincode</label>
+            <input type="number" name="" id="pincode" placeholder="6 digit pincode" required>
 
-        <label for="">Address</label>
-        <input type="address" id="address" placeholder="Flat/House No. Colony/Street No." required>
+            <label for="">Name</label>
+            <input type="text" id="name" placeholder="Full Name" required>
 
-        <label for="">Locality/Landmark</label>
-        <input type="text" id="landmark" placeholder="Eg. Near Apollo Hospital">
+            <label for="">Address</label>
+            <input type="address" id="address" placeholder="Flat/House No. Colony/Street No." required>
 
-        <label for="">City</label>
-        <input type="text" name="" id="city" placeholder="City">
+            <label for="">Locality/Landmark</label>
+            <input type="text" id="landmark" placeholder="Eg. Near Apollo Hospital">
 
-        <label for="">State</label>
-        <input type="text" id="state" placeholder="State" required>
+            <label for="">City</label>
+            <input type="text" name="" id="city" placeholder="City">
 
-        <label for="">Mobile Number</label>
-        <input type="tel" name="" id="mobile" placeholder="10 digit mobile number" required>
+            <label for="">State</label>
+            <input type="text" id="state" placeholder="State" required>
 
-        <label for="">Address Type</label>
-        <div id="address">
-            <label for="">Home/Personal</label>
-            <input type="radio" value="Home/Personal" id="r1" name="1" required>
-            <label for="">Office/Commercial</label>
-            <input type="radio" value="Office/Com" id="r2" name="1" required>
+            <label for="">Mobile Number</label>
+            <input type="tel" name="" id="mobile" placeholder="10 digit mobile number" required>
+
+            <label for="">Address Type</label>
+            <div id="address">
+                <label for="">Home/Personal</label>
+                <input type="radio" value="Home/Personal" id="r1" name="1" required>
+                <label for="">Office/Commercial</label>
+                <input type="radio" value="Office/Com" id="r2" name="1" required>
+            </div>
+
+            <button>Save and Continue</button>
+        </form>
+        <div id="deliv"></div>
+        <div id="cart-contents">
         </div>
 
-        <button>Save and Continue</button>
-    </form>
-    <div id="deliv"></div>
-    <div id="cart-contents">
-        
     </div>
 </body>
 
@@ -406,8 +479,8 @@
     function fillCartContent() {
         let cart_contents = document.getElementById("cart-contents");
         let cart_items = JSON.parse(localStorage.getItem("mycart"));
-       
-           
+
+
         let items = {};
         cart_items.forEach(e => {
             if (items[e.name] == undefined) {
@@ -418,9 +491,9 @@
         })
         // total_items_overlay_cart.innerText = "(" + cart_items.length + " Items)"
         console.log(items);
-        
+
         cart_contents.innerHTML = "";
-       
+
         let sum = 0;
         for (let k in items) {
 
@@ -471,18 +544,18 @@
             sub.textContent = "Rs." + Math.floor((data.price * (1 - (data.discount * 0.01))) * (items[k][0]));
             div5.append(sub);
             container.append(div1, div2, div3, div4, div5)
-            
+
             cart_contents.append(container);
         }
-        let proceedtoPaybtn=document.createElement('button')
-        proceedtoPaybtn.textContent="PROCEED TO PAY";
+        let proceedtoPaybtn = document.createElement('button')
+        proceedtoPaybtn.textContent = "PROCEED TO PAY Rs. " + sum;
         document.getElementById("cart-contents").append(proceedtoPaybtn)
-      proceedtoPaybtn.id="proceedtoPaybtn"
-      clickk=0
-      proceedtoPaybtn.onclick=function(){
-          clickk++
-          payment(clickk)
-      }
+        proceedtoPaybtn.id = "proceedtoPaybtn"
+        clickk = 0
+        proceedtoPaybtn.onclick = function () {
+            clickk++
+            payment(clickk)
+        }
 
     }
 
@@ -493,15 +566,15 @@
         for (let i = 0; i < cart_items.length; i++) {
             if (cart_items[i].name == r && !found) {
                 found = true;
-            }else{
+            } else {
                 new_cart_items.push(cart_items[i]);
             }
         }
-           console.log(new_cart_items);
+        console.log(new_cart_items);
         localStorage.setItem("mycart", JSON.stringify(new_cart_items));
-        if(new_cart_items.length == 0){
+        if (new_cart_items.length == 0) {
             showCart();
-        }else{
+        } else {
             fillCartContent();
         }
         // var totalSumofNewCart=0
@@ -510,7 +583,7 @@
         // }
         // return totalSumofNewCart;
     }
-// console.log(totalSumofNewCart)
+    // console.log(totalSumofNewCart)
     let arrofCart = JSON.parse(localStorage.getItem('mycart'));
     sum = 0;
 
@@ -524,7 +597,7 @@
             paymentDiv.id = 'pay';
             let h1 = document.createElement('h1');
             h1.textContent = 'Make Payment';
-            document.querySelector('body').append(paymentDiv);
+            document.getElementById('payment-area').append(paymentDiv);
 
             let box2 = document.createElement('div');
             box2.id = 'box2';
@@ -541,7 +614,7 @@
             }
 
             let cashbtn = document.createElement('button');
-            cashbtn.textContent = 'Cash on Dilivery';
+            cashbtn.textContent = 'Cash on Delivery';
             cashbtn.onclick = function () {
                 contentDiv.innerHTML = null;
                 cashON();
@@ -709,6 +782,8 @@
         let upiInfo = document.createElement('form');
         upiInfo.id = "upiInfo";
 
+        let div1 = document.createElement("div");
+
         let vpaInput = document.createElement('input');
         vpaInput.type = "number";
         vpaInput.required = true;
@@ -718,8 +793,13 @@
         varifylabel.textContent = "VERIFY";
         varifylabel.id = 'verify';
 
+        div1.append(vpaInput, varifylabel);
+
         let finalPaybtn = document.createElement('button');
         finalPaybtn.textContent = 'PAY RS.' + sum;
+
+        let div2 = document.createElement("div");
+        div2.append(finalPaybtn);
 
         let p = document.createElement("p");
         p.id = "upipara";
@@ -731,7 +811,7 @@
 
 
 
-        upiInfo.append(vpaInput, varifylabel, finalPaybtn, p, h6);
+        upiInfo.append(div1, div2, p, h6);
 
         upiInfo.onsubmit = function (event) {
             event.preventDefault();

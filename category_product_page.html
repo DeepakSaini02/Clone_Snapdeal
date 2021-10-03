@@ -2145,7 +2145,7 @@
                 let price = Math.floor(el.price * (1 - (el.discount * 0.01)));
                 let upVal = document.getElementById('upVal');
                 upVal.innerHTML = "Rs. " + pVal;
-                return price > pVal
+                return price < pVal
             }
         })
         setItemNumber(arr.length);

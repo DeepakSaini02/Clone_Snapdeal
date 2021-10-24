@@ -385,11 +385,12 @@
 
 
         /* CSS for login starts */
+
         #overlay {
             display: none;
             position: fixed;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             z-index: 5;
         }
 
@@ -996,7 +997,7 @@
         }
 
         #cart-contents {
-            height: 400px;
+            height: 327px;
             overflow-y: scroll;
             font-size: 14px;
             color: #666;
@@ -2860,7 +2861,7 @@
     if (localStorage.getItem("logged_user") != "") {
         let logged_user = JSON.parse(localStorage.getItem("logged_user"));
         user = logged_user;
-        console.log(user);
+        // console.log(user);
         completeLogin();
     }
 
@@ -2901,7 +2902,7 @@
         }
         // alert("Logged in successfully.");
         let nav_login = document.querySelector("#nav_signin > p:nth-of-type(1)");
-        console.log(user);
+        // console.log(user);
         let first_name = user.name.split(" ");
         nav_login.textContent = first_name[0];
         document.querySelector("#nav_signin > ul").style.left = "-60px";
@@ -2986,7 +2987,7 @@
             password: password.value
         }
 
-        console.log(users);
+        // console.log(users);
 
         let user_exists = false;
 
@@ -3039,7 +3040,7 @@
             }
         })
         total_items_overlay_cart.innerText = "(" + cart_items.length + " Items)"
-        console.log(items);
+        // console.log(items);
         cart_contents.innerHTML = "";
         let sum = 0;
         for (let k in items) {
@@ -3110,7 +3111,7 @@
                 new_cart_items.push(cart_items[i]);
             }
         }
-        console.log(new_cart_items);
+        // console.log(new_cart_items);
         localStorage.setItem("mycart", JSON.stringify(new_cart_items));
         if (new_cart_items.length == 0) {
             showCart();
@@ -3562,7 +3563,7 @@
     }
 
     function details(p) {
-        console.log(p)
+        // console.log(p)
 
 
         localStorage.setItem("productdetails", JSON.stringify(p))

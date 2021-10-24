@@ -16,12 +16,12 @@
         /* NAVBAR STYLES START */
 
 
-        body {
+        /* body {
             margin: 0;
             background-color: #f7f7f7;
             font-family: 'Open Sans', sans-serif;
             overflow-x: hidden;
-        }
+        } */
 
         /* CSS for nav top bar starts */
 
@@ -275,8 +275,8 @@
         #overlay {
             display: none;
             position: fixed;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             z-index: 5;
         }
 
@@ -995,7 +995,7 @@
             max-width: 1402px;
             width: 100%;
             margin: 0 auto;
-            padding: 0px;
+            padding: 0px 0px 11px 0px;
             background-color: white;
             box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
         }
@@ -1006,6 +1006,7 @@
         }
 
         #parent>img {
+            
             height: 500px;
             max-width: 100%;
         }
@@ -1044,15 +1045,18 @@
         }
 
         #offer {
-            /* border: 2px solid yellow; */
-            width: 35%;
+            border: 1px dotted gray;
+            width: 40%;
             display: inline-grid;
             margin-left: 30%;
+            text-align: inherit;
+            height: 241px;
+           
         }
 
         #offer>div>p {
             margin: 8px;
-
+            font-size: 14px;
         }
 
 
@@ -1062,7 +1066,7 @@
 
         #addAndBuy>button {
             font-family: "font-regular";
-            width: 135px;
+            width: 150px;
             height: 50px;
             margin: 11px;
             color: white;
@@ -1071,10 +1075,12 @@
 
         #addAndBuy>button:nth-child(1) {
             background-color: #212121;
+            border: none;
         }
 
         #addAndBuy>button:nth-child(2) {
             background-color: #e40046;
+            border: none;
 
         }
 
@@ -1104,9 +1110,11 @@
             max-width: 1402px;
             display: flex;
             width: 100%;
-            margin: 10px auto;
+            margin: 34px auto;
             background-color: white;
+            padding: 10px 0px;
             box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+           
         }
 
         .highlights>h3 {
@@ -1128,6 +1136,7 @@
         .accordion{
             display: flex;
             flex-direction: column;
+            margin: -33px 0px
         }
 
         .accordion>input[name="collapse"] {
@@ -1159,7 +1168,9 @@
         }
 
         .accordion label:hover,
-        .accordion label:focus {}
+        .accordion label:focus {
+            border: none;
+        }
 
         .accordion .handle label:before {
             font-family: FontAwesome;
@@ -1220,7 +1231,7 @@
             display: grid;
             grid-template-columns: 20% 20% 20% 20% 20%;
             justify-content: space-between;
-            margin: auto;
+            margin: 55px 0px;
         }
 
         #productsDisplay>div {
@@ -1495,7 +1506,10 @@
         }
 
         /* CSS for footer ends */
-
+#offerimg{
+    height: 36px;
+    margin: 5px;
+}
 
         @media (min-width: 1582px) {
 
@@ -2081,7 +2095,7 @@
     let pricing = document.createElement("div");
 
     let mrp = document.createElement("span");
-    mrp.innerText = "Rs. " + product.price + " " + "\n";
+    mrp.innerText = "Rs. " + product.price + "(Inclusive of all taxes) " + "\n";
     mrp.style.textDecoration = "line-through";
     mrp.style.marginRight = "2px";
     mrp.style.color = "#bbbbbb"
@@ -2118,26 +2132,40 @@
 
 
     let offer1 = document.createElement("div")
+    let offerimg=document.createElement('img')
+    offerimg.id='offerimg'
+    offerimg.src="https://i2.sdlcdn.com/img/newOffersIcon.png"
     let para1 = document.createElement("p")
-
     para1.textContent = "15% Instant Discount Using Rupay Debit & Credit Cards T&C"
+    
 
-    offer1.append(para1)
+    offer1.append(offerimg,para1)
+    offer1.style.display='flex'
 
     let offer2 = document.createElement("div")
+    let offerimg2=document.createElement('img')
+    offerimg2.id='offerimg'
+    offerimg2.src="https://i2.sdlcdn.com/img/newOffersIcon.png"
+    
     let para2 = document.createElement("p")
 
     para2.textContent = "25% Instant Discount Using IDBI Bank Credit Cards T&C"
-    offer2.append(para2)
+    offer2.append(offerimg2,para2)
+    offer2.style.display='flex'
 
     let offer3 = document.createElement("div")
+    let offerimg3=document.createElement('img')
+    offerimg3.id='offerimg'
+    offerimg3.src="https://i2.sdlcdn.com/img/newOffersIcon.png"
     let para3 = document.createElement("p")
     para3.textContent = "20% Cashback Using Dhani Cards. Min. Order: Rs. 100 T&C"
-    offer3.append(para3)
+    offer3.append(offerimg3,para3)
+    offer3.style.display='flex'
+
 
     offer.append(headpara, offer1, offer2, offer3)
     offer.style.margin = "0 400px"
-    offer.style.border = "1px solid black"
+    // offer.style.border = "1px solid black"
 
     let addAndBuy = document.createElement('div')
     addAndBuy.id = "addAndBuy";
@@ -2189,7 +2217,7 @@
 
     }
 
-    console.log(product)
+    // console.log(product)
 </script>
 
 <script>
@@ -2227,7 +2255,7 @@
     if (localStorage.getItem("logged_user") != "") {
         let logged_user = JSON.parse(localStorage.getItem("logged_user"));
         user = logged_user;
-        console.log(user);
+        // console.log(user);
         completeLogin();
     }
 
@@ -2268,7 +2296,7 @@
         }
         // alert("Logged in successfully.");
         let nav_login = document.querySelector("#nav_signin > p:nth-of-type(1)");
-        console.log(user);
+        // console.log(user);
         let first_name = user.name.split(" ");
         nav_login.textContent = first_name[0];
         document.querySelector("#nav_signin > ul").style.left = "-60px";
@@ -2353,7 +2381,7 @@
             password: password.value
         }
 
-        console.log(users);
+        // console.log(users);
 
         let user_exists = false;
 
@@ -2406,7 +2434,7 @@
             }
         })
         total_items_overlay_cart.innerText = "(" + cart_items.length + " Items)"
-        console.log(items);
+        // console.log(items);
         cart_contents.innerHTML = "";
         let sum = 0;
         for (let k in items) {
@@ -2477,7 +2505,7 @@
                 new_cart_items.push(cart_items[i]);
             }
         }
-        console.log(new_cart_items);
+        // console.log(new_cart_items);
         localStorage.setItem("mycart", JSON.stringify(new_cart_items));
         if (new_cart_items.length == 0) {
             showCart();
@@ -2892,7 +2920,7 @@
     }
 
     function details(p) {
-        console.log(p)
+        // console.log(p)
 
 
         localStorage.setItem("productdetails", JSON.stringify(p))

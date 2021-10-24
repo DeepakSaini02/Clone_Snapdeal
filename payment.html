@@ -433,7 +433,7 @@
         } else {
             add_value = document.getElementById('r2').value;
         }
-        console.log(pincode, name, address, landmark, city, state, mobile, add_value);
+        // console.log(pincode, name, address, landmark, city, state, mobile, add_value);
 
         myform.style.display = "none";
 
@@ -490,7 +490,7 @@
             }
         })
         // total_items_overlay_cart.innerText = "(" + cart_items.length + " Items)"
-        console.log(items);
+        // console.log(items);
 
         cart_contents.innerHTML = "";
 
@@ -570,7 +570,7 @@
                 new_cart_items.push(cart_items[i]);
             }
         }
-        console.log(new_cart_items);
+        // console.log(new_cart_items);
         localStorage.setItem("mycart", JSON.stringify(new_cart_items));
         if (new_cart_items.length == 0) {
             showCart();
@@ -738,7 +738,7 @@
         }
 
         contentDiv.append(contentHeadingDiv, cardInfo);
-        console.log("yoyoyo");
+        // console.log("yoyoyo");
 
     }
     function cashON() {
@@ -772,7 +772,7 @@
         }
 
         contentDiv.append(contentHeadingDiv, cashInfo, p, h6);
-        console.log("yoyo");
+        // console.log("yoyo");
     }
 
     function upi() {
@@ -819,7 +819,7 @@
         }
 
         contentDiv.append(contentHeadingDiv, upiInfo);
-        console.log("yo");
+        // console.log("yo");
 
     }
 

@@ -1002,11 +1002,13 @@
 
         #parent {
             display: inline-block;
-            width: 40%;
+            width: 35%;
+            border-right: 1px solid rgba(187, 185, 185, 0.171);
+            margin-right: 5%;
         }
 
         #parent>img {
-            
+
             height: 500px;
             max-width: 100%;
         }
@@ -1016,6 +1018,12 @@
             display: inline-block;
             vertical-align: top;
             text-overflow: clip;
+        }
+
+        #parent2>hr {
+            background: rgba(187, 186, 186, 0.418);
+            border: none;
+            height: 1px;
         }
 
         .stars-outer {
@@ -1045,19 +1053,22 @@
         }
 
         #offer {
-            border: 1px dotted gray;
+            border: 1px dashed rgba(128, 128, 128, 0.418);
             width: 40%;
             display: inline-grid;
             margin-left: 30%;
             text-align: inherit;
             /* height: 241px; */
-           
+            border-radius: 3px;
+            padding: 5px;
+
         }
+
         #offer>p {
-          margin: 0;
-           
+            margin: 0;
+
         }
-       
+
 
 
         #offer>div>p {
@@ -1082,6 +1093,12 @@
         #addAndBuy>button:nth-child(1) {
             background-color: #212121;
             border: none;
+            cursor: pointer;
+        }
+
+        #addAndBuy>button:nth-child(1):hover {
+            background-color: #323232;
+            border: none;
         }
 
         #addAndBuy>button:nth-child(2) {
@@ -1090,26 +1107,40 @@
 
         }
 
+        #addAndBuy>button:nth-child(2):hover {
+            background-color: #d90040;
+        }
+
         #returnDiv>h5,
         h6 {
             margin: 2px;
             font-size: 12px;
             color: #666666;
+            font-weight: 400;
+        }
 
-
+        #returnDiv>h5{
+            color: #444;
         }
 
         .gray_heading {
-            height: 24px;
+            height: 30px;
             max-width: 1402px;
             margin: auto;
+            overflow: hidden;
         }
 
-        .gray_heading>p {
+        .gray_heading > p {
             margin: 0 10px;
             font-size: 1px;
             text-align: left;
             color: gray;
+            max-width: 1100px;
+        }
+
+        .gray_heading > p > span{
+            height: 12x;
+            text-overflow: ellipsis;
         }
 
         .highlights {
@@ -1120,7 +1151,7 @@
             background-color: white;
             padding: 10px 0px;
             box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
-           
+
         }
 
         .highlights>h3 {
@@ -1139,7 +1170,7 @@
             box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
         }
 
-        .accordion{
+        .accordion {
             display: flex;
             flex-direction: column;
             margin: -33px 0px
@@ -1306,8 +1337,8 @@
 
         /* CSS from product_catalogue ends */
 
-                /* CSS for footer */
-                #footer-area {
+        /* CSS for footer */
+        #footer-area {
             background: #ffffff;
             display: flex;
             flex-direction: column;
@@ -1437,18 +1468,7 @@
             font-size: 13px;
             color: #999;
             border: none;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            background-color: #f7f8fa;
-            padding-left: 10px;
-        }
-
-        #sub-button {
-            background-color: black;
-            color: #ffffff;
-            border: none;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            btnight-radius: 5px;
         }
 
         .footer-fonthead {
@@ -1512,15 +1532,64 @@
         }
 
         /* CSS for footer ends */
-#offerimg{
-    height: 36px;
-    margin: 5px;
-}
+        #offerimg {
+            height: 36px;
+            margin: 5px;
+        }
+
+        #discount_off {
+            border: 1px solid rgb(153, 153, 153);
+            padding: 4px;
+            font-size: 10px;
+            margin-left: 4px;
+            color: #999;
+            vertical-align: text-top;
+        }
+
+        #offer>p:nth-of-type(1) {
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        #offer>div>p {
+            border-bottom: 1px solid rgba(187, 185, 185, 0.171);
+        }
+
+        .clr-lightGray {
+            color: #999;
+        }
+
+        #buyNowBtn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        #returnDiv {
+            margin-top: 30px;
+            font-weight: 400;
+        }
+
+        #product_name_branch {
+            color: #777;
+        }
 
         @media (min-width: 1582px) {
 
             nav>div,
-            .topThinBar>div, .highlights, .details, .container, .gray_heading, #container>div, #paymentconnect, #lastfooter, #four-flex, #footer {
+            .topThinBar>div,
+            .highlights,
+            .details,
+            .container,
+            .gray_heading,
+            #container>div,
+            #paymentconnect,
+            #lastfooter,
+            #four-flex,
+            #footer {
                 max-width: 1600px;
             }
 
@@ -1842,8 +1911,7 @@
 
     <!-- NAVBAR BODY END -->
     <div class="gray_heading">
-        <p style="font-size: 12px; margin: 10px;">Home > Top Categories&nbsp; >&nbsp; Products&nbsp; >&nbsp; Product
-            Description&nbsp; </p>
+        <p style="font-size: 12px; margin: 10px;">Home&nbsp; /&nbsp; Top Categories&nbsp; /&nbsp; Products&nbsp; /&nbsp; <span id="product_name_branch"></span>&nbsp; </p>
 
     </div>
     <div class="container">
@@ -1938,9 +2006,9 @@
         <button>Load More</button>
     </div>
 
-     <!-- Footer Area -->
+    <!-- Footer Area -->
 
-     <div id="footer-area">
+    <div id="footer-area">
         <div id="four-flex">
             <div class="inside-flex">
                 <div class="icons">
@@ -1978,31 +2046,31 @@
         <div id="footer">
             <div>
                 <p class="footer-fonthead">POLICY INFO</p>
-                <p class="inside-flex-fontbody">Privay Policy 
-                    Terms of Sale 
-                    Terms of USe 
+                <p class="inside-flex-fontbody">Privay Policy
+                    Terms of Sale
+                    Terms of USe
                     Report Abuse & Tkedown Policy</p>
             </div>
             <div>
                 <p class="footer-fonthead">COMPANY</p>
-                <p class="inside-flex-fontbody">About Us 
-                    Core Values 
-                    Careers 
-                    Blog 
+                <p class="inside-flex-fontbody">About Us
+                    Core Values
+                    Careers
+                    Blog
                     Sitemap</p>
             </div>
             <div>
                 <p class="footer-fonthead">SNAPDEAL BUSINESS</p>
-                <p class="inside-flex-fontbody">Shopping App 
-                    Sell on Snapdeal 
-                    Advertise on Snapdeal 
-                    Media Enquiries 
+                <p class="inside-flex-fontbody">Shopping App
+                    Sell on Snapdeal
+                    Advertise on Snapdeal
+                    Media Enquiries
                     Be an Affiliate</p>
             </div>
             <div>
                 <p class="footer-fonthead">NEED HELP ?</p>
-                <p class="inside-flex-fontbody">FAQ 
-                    Contact Us 
+                <p class="inside-flex-fontbody">FAQ
+                    Contact Us
                     Online Shopping</p>
             </div>
             <div>
@@ -2011,7 +2079,7 @@
                     <input type="text" id="sub-text" placeholder="Your email address">
                     <input type="button" id="sub-button" value="SUBSCRIBE">
                 </div>
-                <p class="inside-flex-fontbody">Register now to get updates on promotions and 
+                <p class="inside-flex-fontbody">Register now to get updates on promotions and
                     coupons.Or Download App</p>
             </div>
         </div>
@@ -2074,6 +2142,9 @@
     // let product_image2=document.createElement("img")
     // product_image2.src=product.image2
 
+    document.getElementById("product_name_branch").innerText = product.name;
+
+
     let parent2 = document.createElement("div");
     parent2.id = "parent2";
     document.querySelector(".container").append(parent2);
@@ -2096,32 +2167,47 @@
     starinner.append(iconstar)
     starouter.append(starinner)
 
+    let rating_number = document.createElement("span");
+    rating_number.innerText = `(${product.rating})`;
+    rating_number.className = "clr-lightGray";
+    rating_number.style.marginLeft = "10px";
+
     let hr = document.createElement("hr");
 
     let pricing = document.createElement("div");
 
-    let mrp = document.createElement("span");
-    mrp.innerText = "Rs. " + product.price + "(Inclusive of all taxes) " + "\n";
-    mrp.style.textDecoration = "line-through";
-    mrp.style.marginRight = "2px";
-    mrp.style.color = "#bbbbbb"
+    // let mrp = document.createElement("span");
+    // mrp.innerText = "MRP Rs. " + product.price + "(Inclusive of all taxes) " + "\n";
+    // mrp.style.textDecoration = "line-through";
+    // mrp.style.marginRight = "2px";
+    // mrp.style.color = "#bbbbbb"
     // mrp.style.display = "inline-Block";
 
+    let mrp = document.createElement("span");
+    mrp.innerText = "MRP ";
+    let mrp_amount = document.createElement("span");
+    mrp_amount.innerText = "Rs. " + product.price;
+    mrp_amount.style.textDecoration = "line-through";
+    mrp.append(mrp_amount);
+    mrp.append(" (Inclusive of all taxes) \n");
+    mrp.style.marginRight = "2px";
+    mrp.style.color = "#bbbbbb"
 
 
     let discountPrice = document.createElement("span");
-    discountPrice.innerText = "Rs. " + Math.floor(product.price * (1 - (product.discount * 0.01)));
+    discountPrice.innerText = "\nRs. " + Math.floor(product.price * (1 - (product.discount * 0.01)));
     discountPrice.style.marginRight = "5px";
     discountPrice.style.color = "red";
     discountPrice.style.fontSize = "24px";
 
-    let discount = document.createElement("div");
+    let discount = document.createElement("span");
+    discount.id = "discount_off";
     discount.style.display = "inline-block";
     discount.innerText = product.discount + "% OFF" + "\n";
-    discount.style.border = "1px solid #999";
-    discount.style.boxSizing = "border-box";
-    discount.style.padding = "4px";
-    discount.style.fontSize = "10px";
+    // discount.style.border = "1px solid #999";
+    // discount.style.boxSizing = "border-box";
+    // discount.style.padding = "4px";
+    // discount.style.fontSize = "10px";
 
 
     pricing.style.display = "inline"
@@ -2130,43 +2216,43 @@
 
 
 
-    let offer = document.createElement("div")
+    let offer = document.createElement("div");
     let headpara = document.createElement("p")
     offer.id = "offer";
     headpara.textContent = "(3) Offers | Applicable on cart";
-    headpara.style.fontSize = "14px";
-    
+    // headpara.style.fontSize = "14px";
+
 
     let offer1 = document.createElement("div")
-    let offerimg=document.createElement('img')
-    offerimg.id='offerimg'
-    offerimg.src="https://i2.sdlcdn.com/img/newOffersIcon.png"
+    let offerimg = document.createElement('img')
+    offerimg.id = 'offerimg'
+    offerimg.src = "https://i2.sdlcdn.com/img/newOffersIcon.png"
     let para1 = document.createElement("p")
     para1.textContent = "15% Instant Discount Using Rupay Debit & Credit Cards T&C"
-    
 
-    offer1.append(offerimg,para1)
-    offer1.style.display='flex'
+
+    offer1.append(offerimg, para1)
+    offer1.style.display = 'flex'
 
     let offer2 = document.createElement("div")
-    let offerimg2=document.createElement('img')
-    offerimg2.id='offerimg'
-    offerimg2.src="https://i2.sdlcdn.com/img/newOffersIcon.png"
-    
+    let offerimg2 = document.createElement('img')
+    offerimg2.id = 'offerimg'
+    offerimg2.src = "https://i2.sdlcdn.com/img/newOffersIcon.png"
+
     let para2 = document.createElement("p")
 
     para2.textContent = "25% Instant Discount Using IDBI Bank Credit Cards T&C"
-    offer2.append(offerimg2,para2)
-    offer2.style.display='flex'
+    offer2.append(offerimg2, para2)
+    offer2.style.display = 'flex'
 
     let offer3 = document.createElement("div")
-    let offerimg3=document.createElement('img')
-    offerimg3.id='offerimg'
-    offerimg3.src="https://i2.sdlcdn.com/img/newOffersIcon.png"
+    let offerimg3 = document.createElement('img')
+    offerimg3.id = 'offerimg'
+    offerimg3.src = "https://i2.sdlcdn.com/img/newOffersIcon.png"
     let para3 = document.createElement("p")
     para3.textContent = "20% Cashback Using Dhani Cards. Min. Order: Rs. 100 T&C"
-    offer3.append(offerimg3,para3)
-    offer3.style.display='flex'
+    offer3.append(offerimg3, para3)
+    offer3.style.display = 'flex'
 
 
     offer.append(headpara, offer1, offer2, offer3)
@@ -2178,22 +2264,36 @@
     let addtoCartBtn = document.createElement('button')
     addtoCartBtn.textContent = 'ADD TO CART';
 
-    let buyNowBtn = document.createElement('button')
-    buyNowBtn.textContent = 'BUY NOW'
+    let buyNowBtn = document.createElement('button');
+    buyNowBtn.id = "buyNowBtn";
+    let logo_box = document.createElement("img");
+    logo_box.src = "images/sdLogoBox.png";
+    logo_box.style.width = "1rem";
+    logo_box.style.marginRight = "5px";
+    buyNowBtn.append(logo_box);
+    buyNowBtn.append('BUY NOW');
 
     addAndBuy.append(addtoCartBtn, buyNowBtn)
 
     let returnDiv = document.createElement('div')
-    let head5 = document.createElement('h5')
-    head5.textContent = " 7 Days Easy Returns";
+    let head5 = document.createElement('h5');
+    let shield_img = document.createElement("img");
+    shield_img.src = "images/shield-50.png";
+    shield_img.style.width = "0.8rem";
+    head5.append(shield_img);
+    head5.append(" 7 Days Easy Returns");
+    head5.style.fontWeight = "400";
+    head5.style.fontSize = "0.8rem";
 
-    let head6 = document.createElement('h6')
+
+
+    let head6 = document.createElement('h6');
     head6.textContent = " Trustpay: 100% Payment Protection. Return or Replacement is applicable for 7 days after delivery.";
     returnDiv.id = "returnDiv"
 
     returnDiv.append(head5, head6)
     parent.append(product_image1)
-    parent2.append(product_name, starouter, hr, pricing, offer, addAndBuy, returnDiv)
+    parent2.append(product_name, starouter, rating_number, hr, pricing, offer, addAndBuy, returnDiv)
 
     addtoCartBtn.onclick = function () {
         addtoCart(product)
@@ -2551,7 +2651,7 @@
 
 
     //Code to set title of page
-    function setPageTitle(){
+    function setPageTitle() {
         let product = JSON.parse(localStorage.getItem("productdetails"));
         let title = document.getElementById("page_title");
         page_title.textContent = product.name;

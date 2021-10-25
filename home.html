@@ -1082,7 +1082,7 @@
             max-width: 1402px;
             display: grid;
             grid-template-columns: repeat(5,auto);
-            justify-content: center;
+            justify-content: space-between;
             margin: auto;
         }
 
@@ -1666,13 +1666,16 @@
             }
         }
 
-        @media (max-width: 1320px){
+        @media (max-width: 1320px) {
             #topContent {
                 /* grid-template-columns: 200px 71.25%; */
-            grid-template-areas:
-                "a b b"
-                "a d d";
-        }
+                grid-template-areas:
+                    "a b b"
+                    "a d d";
+            }
+            #login_cards {
+                display: none;
+            }
         }
     </style>
 </head>

@@ -18,6 +18,10 @@
             font-family: 'Open Sans', sans-serif;
         }
 
+        button{
+            cursor: pointer;
+        }
+
         #myform {
             display: grid;
             margin-left: 50px;
@@ -673,6 +677,7 @@
             cardInfo.onsubmit = function (event) {
                 event.preventDefault();
                 alert("Payment Successfully Done");
+                window.location.href="home.html";
             }
 
             contentDiv.append(contentHeadingDiv, cardInfo);
@@ -735,6 +740,7 @@
         cardInfo.onsubmit = function (event) {
             event.preventDefault();
             alert("Payment Successfully Done");
+            window.location.href="home.html";
         }
 
         contentDiv.append(contentHeadingDiv, cardInfo);
@@ -769,6 +775,7 @@
         cashInfo.onsubmit = function (event) {
             event.preventDefault();
             alert("Order Successfully Placed");
+            window.location.href = "home.html";
         }
 
         contentDiv.append(contentHeadingDiv, cashInfo, p, h6);
@@ -816,6 +823,7 @@
         upiInfo.onsubmit = function (event) {
             event.preventDefault();
             alert("Payment Successfully Done");
+            window.location.href="home.html";
         }
 
         contentDiv.append(contentHeadingDiv, upiInfo);

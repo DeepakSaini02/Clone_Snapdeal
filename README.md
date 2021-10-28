@@ -25,14 +25,14 @@
 ## Screenshots 
 - Landing Page
 ![Landing Page](./images/preview/Home_top.png)
-<img src="./images/preview/Home_product_catalogue.png" width="45%">
-<img src="./images/preview/category_nav.png" width="45%">
+<img src="./images/preview/Home_product_catalogue.png" width="40%">
+<img src="./images/preview/category_nav.png" width="40%">
 
 
 - Login/Signup
 ![Login](./images/preview/Login_overlay.png)
-<img src="./images/preview/Signup_overlay.png" width="45%">
-<img src="./images/preview/otp_overlay.png" width="45%">
+<img src="./images/preview/Signup_overlay.png" width="40%">
+<img src="./images/preview/otp_overlay.png" width="40%">
 
 - Product Detail Page
 ![Product Detail Page](./images/preview/product_detail.png)

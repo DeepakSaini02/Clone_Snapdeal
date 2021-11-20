@@ -16,6 +16,11 @@
             margin: 0;
             background-color: #f7f7f7;
             font-family: 'Open Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        button{
+            cursor: pointer;
         }
 
         /* #container {
@@ -333,8 +338,8 @@
         #overlay {
             display: none;
             position: fixed;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             z-index: 5;
         }
 
@@ -712,8 +717,8 @@
             box-shadow: 0 10px 10px rgba(59, 57, 57, 0.472);
             position: absolute;
             z-index: 10;
-            top: 25%;
-            left: 25%;
+            top: 20%;
+            left: 15%;
             padding: 20px;
         }
 
@@ -941,7 +946,7 @@
         }
 
         #cart-contents {
-            height: 400px;
+            height: 327px;
             overflow-y: scroll;
             font-size: 14px;
             color: #666;
@@ -1697,7 +1702,7 @@
         // aa=aa+arrofCart[i].price;
         sum = sum + Math.floor(arrofCart[i].price * (1 - (arrofCart[i].discount * 0.01)));
     }
-    console.log(sum);
+    // console.log(sum);
     let div2 = document.createElement("div");
     let totalItem = document.createElement('p');
     totalItem.textContent = "Your Order: " + arrofCart.length + "Item";
@@ -1736,7 +1741,7 @@
         document.getElementById("login-area").style.display = "flex";
         document.getElementById("cart-overlay").style.display = "none";
     }
-    console.log(arrofCart.length)
+    // console.log(arrofCart.length)
     function removeOverlay() {
 
 
@@ -1763,7 +1768,7 @@
     if (localStorage.getItem("logged_user") != "") {
         let logged_user = JSON.parse(localStorage.getItem("logged_user"));
         user = logged_user;
-        console.log(user);
+        // console.log(user);
         completeLogin();
     }
 
@@ -1804,7 +1809,7 @@
         }
         // alert("Logged in successfully.");
         let nav_login = document.querySelector("#nav_signin > p:nth-of-type(1)");
-        console.log(user);
+        // console.log(user);
         let first_name = user.name.split(" ");
         nav_login.textContent = first_name[0];
         document.querySelector("#nav_signin > ul").style.left = "-60px";
@@ -1889,7 +1894,7 @@
             password: password.value
         }
 
-        console.log(users);
+        // console.log(users);
 
         let user_exists = false;
 
@@ -1942,7 +1947,7 @@
             }
         })
         total_items_overlay_cart.innerText = "(" + cart_items.length + " Items)"
-        console.log(items);
+        // console.log(items);
         cart_contents.innerHTML = "";
         let sum = 0;
         for (let k in items) {
@@ -2013,7 +2018,7 @@
                 new_cart_items.push(cart_items[i]);
             }
         }
-        console.log(new_cart_items);
+        // console.log(new_cart_items);
         localStorage.setItem("mycart", JSON.stringify(new_cart_items));
 
         let current_product = JSON.parse(localStorage.getItem("productdetails"));

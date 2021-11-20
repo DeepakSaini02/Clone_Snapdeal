@@ -18,6 +18,10 @@
             font-family: 'Open Sans', sans-serif;
         }
 
+        button{
+            cursor: pointer;
+        }
+
         #myform {
             display: grid;
             margin-left: 50px;
@@ -317,7 +321,7 @@
 
 
         #cart-contents {
-            height: 300px;
+            height: 327px;
             /* border: 2px solid green; */
         }
 
@@ -433,7 +437,7 @@
         } else {
             add_value = document.getElementById('r2').value;
         }
-        console.log(pincode, name, address, landmark, city, state, mobile, add_value);
+        // console.log(pincode, name, address, landmark, city, state, mobile, add_value);
 
         myform.style.display = "none";
 
@@ -490,7 +494,7 @@
             }
         })
         // total_items_overlay_cart.innerText = "(" + cart_items.length + " Items)"
-        console.log(items);
+        // console.log(items);
 
         cart_contents.innerHTML = "";
 
@@ -570,7 +574,7 @@
                 new_cart_items.push(cart_items[i]);
             }
         }
-        console.log(new_cart_items);
+        // console.log(new_cart_items);
         localStorage.setItem("mycart", JSON.stringify(new_cart_items));
         if (new_cart_items.length == 0) {
             showCart();
@@ -673,6 +677,7 @@
             cardInfo.onsubmit = function (event) {
                 event.preventDefault();
                 alert("Payment Successfully Done");
+                window.location.href="home.html";
             }
 
             contentDiv.append(contentHeadingDiv, cardInfo);
@@ -735,10 +740,11 @@
         cardInfo.onsubmit = function (event) {
             event.preventDefault();
             alert("Payment Successfully Done");
+            window.location.href="home.html";
         }
 
         contentDiv.append(contentHeadingDiv, cardInfo);
-        console.log("yoyoyo");
+        // console.log("yoyoyo");
 
     }
     function cashON() {
@@ -769,10 +775,11 @@
         cashInfo.onsubmit = function (event) {
             event.preventDefault();
             alert("Order Successfully Placed");
+            window.location.href = "home.html";
         }
 
         contentDiv.append(contentHeadingDiv, cashInfo, p, h6);
-        console.log("yoyo");
+        // console.log("yoyo");
     }
 
     function upi() {
@@ -816,10 +823,11 @@
         upiInfo.onsubmit = function (event) {
             event.preventDefault();
             alert("Payment Successfully Done");
+            window.location.href="home.html";
         }
 
         contentDiv.append(contentHeadingDiv, upiInfo);
-        console.log("yo");
+        // console.log("yo");
 
     }
 

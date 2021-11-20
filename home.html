@@ -385,11 +385,12 @@
 
 
         /* CSS for login starts */
+
         #overlay {
             display: none;
             position: fixed;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             z-index: 5;
         }
 
@@ -767,8 +768,8 @@
             box-shadow: 0 10px 10px rgba(59, 57, 57, 0.472);
             position: absolute;
             z-index: 10;
-            top: 25%;
-            left: 25%;
+            top: 20%;
+            left: 15%;
             padding: 20px;
         }
 
@@ -996,7 +997,7 @@
         }
 
         #cart-contents {
-            height: 400px;
+            height: 327px;
             overflow-y: scroll;
             font-size: 14px;
             color: #666;
@@ -1080,14 +1081,14 @@
         #productsDisplay {
             max-width: 1402px;
             display: grid;
-            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-columns: repeat(5,auto);
             justify-content: space-between;
             margin: auto;
         }
 
         #productsDisplay>div {
             min-width: 205px;
-            max-width: 242px;
+            width: 16rem;
             box-sizing: border-box;
             padding: 20px;
             margin: auto;
@@ -1665,13 +1666,16 @@
             }
         }
 
-        @media (max-width: 1320px){
+        @media (max-width: 1320px) {
             #topContent {
                 /* grid-template-columns: 200px 71.25%; */
-            grid-template-areas:
-                "a b b"
-                "a d d";
-        }
+                grid-template-areas:
+                    "a b b"
+                    "a d d";
+            }
+            #login_cards {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -2860,7 +2864,7 @@
     if (localStorage.getItem("logged_user") != "") {
         let logged_user = JSON.parse(localStorage.getItem("logged_user"));
         user = logged_user;
-        console.log(user);
+        // console.log(user);
         completeLogin();
     }
 
@@ -2901,7 +2905,7 @@
         }
         // alert("Logged in successfully.");
         let nav_login = document.querySelector("#nav_signin > p:nth-of-type(1)");
-        console.log(user);
+        // console.log(user);
         let first_name = user.name.split(" ");
         nav_login.textContent = first_name[0];
         document.querySelector("#nav_signin > ul").style.left = "-60px";
@@ -2986,7 +2990,7 @@
             password: password.value
         }
 
-        console.log(users);
+        // console.log(users);
 
         let user_exists = false;
 
@@ -3039,7 +3043,7 @@
             }
         })
         total_items_overlay_cart.innerText = "(" + cart_items.length + " Items)"
-        console.log(items);
+        // console.log(items);
         cart_contents.innerHTML = "";
         let sum = 0;
         for (let k in items) {
@@ -3110,7 +3114,7 @@
                 new_cart_items.push(cart_items[i]);
             }
         }
-        console.log(new_cart_items);
+        // console.log(new_cart_items);
         localStorage.setItem("mycart", JSON.stringify(new_cart_items));
         if (new_cart_items.length == 0) {
             showCart();
@@ -3562,7 +3566,7 @@
     }
 
     function details(p) {
-        console.log(p)
+        // console.log(p)
 
 
         localStorage.setItem("productdetails", JSON.stringify(p))
